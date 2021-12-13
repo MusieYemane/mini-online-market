@@ -1,11 +1,13 @@
 import { useState } from "react";
 import "./Product.css";
+import {Outlet, Link} from "react-router-dom"
 
 export default function Product(props) {
   const { product, onAdd, onRemove } = props;
   return (
     <div className="productCard">
-      <img className="small" src={product.image} alt={product.name} />
+      <Link to="/productPage" state= {{product:product}}> <img className="small" src={product.image} alt={product.name} /></Link>
+      
       <h4>{product.name}</h4>
       <p>Posted by: {product.seller}</p>
       <div>

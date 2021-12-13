@@ -56,11 +56,12 @@ export default function Home(props){
 
   return (
     <Routes>
-        <Route path="/" element={<Buyer products={products} onAdd={onAdd} onRemove= {onRemove} cart= {cartItems}/>}>
-          {/* <Route index element={<Home />} /> */}
+          {/* <Route index element={<Buyer />} /> */}
           <Route path="productPage" element={<ProductPage />} />
-          <Route path="sellerPage" element={<Seller />} />
+          <Route path="sellerPage" element={<Seller products={products}/>} />
           <Route path="*" element={<Buyer products={products} onAdd={onAdd} onRemove= {onRemove} cart= {cartItems}/>} />
+          <Route path="/" element={<Buyer products={products} onAdd={onAdd} onRemove= {onRemove} cart= {cartItems}/>}>
+
         </Route>
       </Routes>
     // <div>

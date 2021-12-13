@@ -1,20 +1,28 @@
+import { useLocation } from "react-router-dom";
+import Seller from "../seller/Seller";
 import "./ProductPage.css";
 
 export default function ProductPage() {
+ 
+  //get the state obj passed via link, it contains the product
+  const location = useLocation()
+  const { product } = location.state
+
+
   return (
     <div class="productDetailCard">
       <div className="r1">
         <img
-          src="https://www.esafety.gov.au/sites/default/files/2019-08/Remove%20images%20and%20video.jpg"
-          alt="Denim Jeans"
+          src={product.image}
+          alt={product.name}
           id="prodImg"
         />
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         />
-        <h1>Tailored Jeans</h1>
-        <p class="price">$19.99</p>
+        <h1>{product.name}</h1>
+        <p class="price">${product.price}</p>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
@@ -33,6 +41,7 @@ export default function ProductPage() {
         </p>
     
         <h2>Seller information</h2>
+        <p>{product.seller}</p>
         <button className="btn">Follow Seller</button>
       </div>
 
