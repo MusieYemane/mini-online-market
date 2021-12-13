@@ -3,10 +3,10 @@ import React from 'react';
 import "./Home.css"
 import data from '../../data/data';
 import { useState } from "react";
-import CartPage from '../cart/CartPage';
-import Seller from '../seller/Seller';
-import Buyer from '../buyer/Buyer';
-import ProductPage from '../productPage/ProductPage';
+import CartPage from '../../pages/cart/CartPage';
+import Seller from '../../pages/seller/Seller';
+import Buyer from '../../pages/buyer/Buyer';
+import ProductPage from '../../pages/productPage/ProductPage';
 import {Routes, Route } from "react-router-dom";
 
 
