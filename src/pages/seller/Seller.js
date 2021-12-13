@@ -1,7 +1,9 @@
+import React, { Component }  from 'react';
+
 import './Seller.css'
 
 
-export default function Seller(props){
+Seller = (props) => {
   //assuming we get products that are from this seller
   const {products}= props;
 
@@ -24,11 +26,11 @@ export default function Seller(props){
       <p>Welcome to Seller Page</p>
 
     </div>
-
+{/* 
     <div className="col1">
         {products.map((product) => (
           <div className="cardContainer"> 
-            <div class="card">
+            <div className="card">
               <img src={product.image} alt="image loading..." id="prodImg"/>
               <h1>{product.name}</h1>
               <p class="price">${product.price}</p>
@@ -39,7 +41,7 @@ export default function Seller(props){
           </div>
         ))}
 
-    </div>
+    </div> */}
 
     <div >
       <h1>add product page</h1>
@@ -48,3 +50,5 @@ export default function Seller(props){
       
   )
 }
+
+export default Seller;  

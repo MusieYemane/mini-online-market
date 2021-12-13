@@ -1,11 +1,10 @@
+import react from 'react';
 import Product from "../../components/product/Product";
 import './Buyer.css'
 import {useState, useEffect} from 'react'
 import CartPage from "../cart/CartPage";
 
-
-
-export default function Buyer(props){
+Buyer = (props) => {
   const {products, onAdd, onRemove, cart}= props;
 
 
@@ -64,3 +63,5 @@ export default function Buyer(props){
     </main>
   )
 }
+
+export default Buyer; 

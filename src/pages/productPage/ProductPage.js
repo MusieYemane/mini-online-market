@@ -1,8 +1,9 @@
+import react from 'react'
 import { useLocation } from "react-router-dom";
 import Seller from "../seller/Seller";
 import "./ProductPage.css";
 
-export default function ProductPage() {
+ProductPage = () => {
  
   //get the state obj passed via link, it contains the product
   const location = useLocation()
@@ -59,3 +60,5 @@ export default function ProductPage() {
     </div>
   );
 }
+
+export default ProductPage;
