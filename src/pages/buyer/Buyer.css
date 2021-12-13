@@ -1,0 +1,76 @@
+
+
+.body {
+  margin:2px;
+  margin-top: 60px;
+  display: flex;
+
+}
+
+.row1{
+  display: flex;
+  flex-flow:wrap;
+  flex:0 0 1080px;
+}
+.row2{
+  flex: 0 0 300px;
+}
+
+
+.brand{
+  float: left;
+  margin-left: 20px;
+  margin-top: 10px;;
+  font-size: 28px;
+  text-align: center;
+  font-weight: bold;
+  color:whitesmoke;
+  
+}
+.topnav {
+  background-color: black;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height:60px
+
+}
+
+.menuItem {
+  float: right;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+
+
+#btnNumItems{
+  background-color: red;
+  border-radius: 8px;
+  border: none;
+  color: #ffffff;
+  width: 1.5rem;
+  padding: 0;
+  margin: 0px;
+  font-size: 14px;
+  font-weight: bold;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.inpSearch{
+  width: 300px;
+  padding: 4px;
+  border-radius: 8px;
+}
+
+
+
+
+

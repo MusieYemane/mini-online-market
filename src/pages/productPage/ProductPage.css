@@ -1,0 +1,49 @@
+#prodImg{
+  width:580px;
+  height: 560px;
+  
+}
+
+.productDetailCard {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 100%;
+  margin: 4px;
+  text-align: center;
+  font-family: arial;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+.checked {
+  color: orange;
+}
+html{
+  scroll-behavior: smooth;
+}
+
+.r1{
+  text-align: center;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  margin:10px;
+  width: 100%;
+
+}
+
+.r2{
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  margin:10px;
+  padding: 20px;
+
+}
+.r3{
+
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  width: 100%;
+  
+}
+textarea{
+  width: 80%;
+  height: 150px;
+}
