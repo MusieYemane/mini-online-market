@@ -1,9 +1,7 @@
-import React, { Component }  from 'react';
-
-import './Seller.css'
+import './Seller.css';
 
 
-Seller = (props) => {
+const Seller = (props) => {
   //assuming we get products that are from this seller
   const {products}= props;
 

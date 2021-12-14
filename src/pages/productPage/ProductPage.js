@@ -1,9 +1,7 @@
-import react from 'react'
 import { useLocation } from "react-router-dom";
-import Seller from "../seller/Seller";
 import "./ProductPage.css";
 
-ProductPage = () => {
+const ProductPage = () => {
  
   //get the state obj passed via link, it contains the product
   const location = useLocation()

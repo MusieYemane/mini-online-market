@@ -1,13 +1,10 @@
-import react from 'react';
 import Product from "../../components/product/Product";
 import './Buyer.css'
 import {useState, useEffect} from 'react'
 import CartPage from "../cart/CartPage";
 
-Buyer = (props) => {
+const Buyer = (props) => {
   const {products, onAdd, onRemove, cart}= props;
-
-
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([products]);
 
