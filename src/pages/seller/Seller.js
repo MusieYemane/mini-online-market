@@ -28,8 +28,8 @@ const Seller = (props) => {
     <div className="col1">
         {products.map((product) => (
           <div className="cardContainer"> 
-            <div className="card">
-              <img src={product.image} alt="image loading..." id="prodImg"/>
+            <div class="card">
+              <img src={product.image} alt={product.name} id="prodImg"/>
               <h1>{product.name}</h1>
               <p className="price">${product.price}</p>
               <p>Some descriptions about the products..</p>

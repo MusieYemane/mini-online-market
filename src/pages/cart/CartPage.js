@@ -19,7 +19,7 @@ const CartPage = (props) => {
         cartItems.map((item) => 
           <div className="itemCard">
 
-            <div>{item.name} <br/>{item.qty}x{item.price}</div> 
+            <div>{item.name} <strong>{item.qty}x ${item.price}</strong></div> 
 
             <div className="col-2">
               
@@ -28,11 +28,11 @@ const CartPage = (props) => {
               </button>
               <button onClick={() => onRemove(item)} className="btn">
                 -
-              </button>{' '}
+              </button>
 
             </div>
 
-            <div><img id='prodIcon' src= {item.image}/></div>
+            <div><img id='prodIcon' src= {item.images[0].imageUri}/></div>
 
           </div>)
       }

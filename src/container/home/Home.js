@@ -1,27 +1,36 @@
 
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import "./Home.css"
-import data from '../../data/data';
-import { useState } from "react";
-import CartPage from '../../pages/cart/CartPage';
 import Seller from '../../pages/seller/Seller';
 import Login from '../../pages/Login/Login';
 import Buyer from '../../pages/buyer/Buyer';
 import ProductPage from '../../pages/productPage/ProductPage';
-import { Routes, Route } from "react-router-dom";
+import {Routes, Route } from "react-router-dom";
+import axios from 'axios';
 import RegisterUser from '../../pages/registerUser/RegisterUser';
 import SellerProfile from '../../pages/sellerProfile/SellerPrifile';
 
+const Home = (props) => {
 
+const [products, setProducts] = useState([]);
 
-export default function Home(props) {
+ const fetchProducts = async () => {
+  axios
+    .get("http://localhost:8080/products")
+    .then((res) => {
+      setProducts(res.data);
 
-  const { products } = data;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  };
 
+  useEffect(() => {
+    fetchProducts();
+  }, [])
 
   const [cartItems, setCartItems] = useState([]);
-
-
 
   const onAdd = (product) => {
     const exist = cartItems.find((x) => x.id === product.id);
@@ -90,8 +99,7 @@ export default function Home(props) {
     // </div>  
 
   )
-
-
-
 }
+
+export default Home;
 
