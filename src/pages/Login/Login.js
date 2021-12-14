@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 // import store, { authActions } from '../../reduxStore/index';
 import axios from 'axios';
 import store from '../../reduxStore';
+import { Link } from 'react-router-dom';
 
 
 function LoginComponent(props) {
@@ -50,9 +51,10 @@ function LoginComponent(props) {
                     <button type='submit' onClick={() => loginHandler()}>
                         Login
                     </button> &nbsp;
-                    <button type="submit" onClick={() => registerHandler()}>
+                    <Link to="/register" className="button">Sign up</Link>
+                    {/* <button type="submit" onClick={() => registerHandler()}>
                         Signup
-                    </button><br></br>
+                    </button><br></br> */}
 
                 </div>
 
