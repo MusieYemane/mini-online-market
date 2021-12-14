@@ -11,7 +11,7 @@ const Seller = (props) => {
 
     <header>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
-      <div class="topnav">
+      <div className="topnav">
           <div class= "brand">Mini Online Shopping </div>
           
           <div className="menuItem"> <a href="#login">Edit Product</a></div>
@@ -31,7 +31,7 @@ const Seller = (props) => {
             <div className="card">
               <img src={product.image} alt="image loading..." id="prodImg"/>
               <h1>{product.name}</h1>
-              <p class="price">${product.price}</p>
+              <p className="price">${product.price}</p>
               <p>Some descriptions about the products..</p>
               <p><button className="btn">Edit product</button> </p>
 

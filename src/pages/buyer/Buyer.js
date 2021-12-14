@@ -28,7 +28,7 @@ const Buyer = (props) => {
 
     <header>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
-      <div class="topnav">
+      <div className="topnav">
           <div class= "brand">Mini Online Shopping</div>
           
           <div className="menuItem"> <a href="login">Login</a></div>
@@ -36,7 +36,7 @@ const Buyer = (props) => {
 
           <div class= "menuItem">
             <input class= "inpSearch" value={searchTerm} onChange={handleChange} placeholder= "Search..."/>
-            {/* <button class="btn" >Search</button> */}
+            {/* <button className="btn" >Search</button> */}
           </div>
 
       </div>
