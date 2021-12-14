@@ -21,47 +21,42 @@ const Buyer = (props) => {
   }, [searchTerm]);
 
   return (
-    <main className="block col-2">
-      <div>
-        <header>
-          <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-          ></link>
-          <div className="topnav">
-            <div class="brand">Mini Online Shopping</div>
+    <main>
+      <header>
+        <div className="topnav">
+          <div class="brand">Mini Online Shopping</div>
 
-            <div className="menuItem">
-              {" "}
-              <a href="login">Login</a>
-            </div>
-            <div className="menuItem">
-              {" "}
-              <a href="#cart">
-                <i class="fa fa-shopping-cart">
-                  {" "}
-                  <button id="btnNumItems">
-                    {cart.length == 0 ? "" : cart.length}
-                  </button>
-                </i>
-              </a>
-            </div>
-
-            <div class="menuItem">
-              <input
-                class="inpSearch"
-                value={searchTerm}
-                onChange={handleChange}
-                placeholder="Search..."
-              />
-              {/* <button className="btn" >Search</button> */}
-            </div>
+          <div className="menuItem">
+            {" "}
+            <a href="login">Login</a>
           </div>
-        </header>
+          <div className="menuItem">
+            {" "}
+            <a href="#cart">
+              <i className="fa fa-shopping-cart">
+                {" "}
+                <button id="btnNumItems">
+                  {cart.length == 0 ? "" : cart.length}
+                </button>
+              </i>
+            </a>
+          </div>
 
-        <div className="body">
-          <div className="row1" id="cart">
-            {/* {searchResults
+          <div class="menuItem">
+            <input
+              class="inpSearch"
+              value={searchTerm}
+              onChange={handleChange}
+              placeholder="Search..."
+            />
+            {/* <button className="btn" >Search</button> */}
+          </div>
+        </div>
+      </header>
+
+      <div className="buyer-content">
+        <div className="row1" id="cart">
+          {/* {searchResults
               ? searchResults.map((product) => (
                   <div>
                     <Product
@@ -83,24 +78,18 @@ const Buyer = (props) => {
                   </div>
                 ))} */}
 
-                {
-                  products.map((product) => (
-                    <div>
-                      <Product
-                        key={product.id}
-                        product={product}
-                        onAdd={onAdd}
-                        onRemove={onRemove}
-                      ></Product>
-                    </div>
-                  ))
-                }
-                    
-          </div>
+          {products.map((product) => (
+              <Product
+                key={product.id}
+                product={product}
+                onAdd={onAdd}
+                onRemove={onRemove}
+              ></Product>
+          ))}
+        </div>
 
-          <div className="row2">
-            <CartPage cartItems={cart} onAdd={onAdd} onRemove={onRemove} />
-          </div>
+        <div className="row2">
+          <CartPage cartItems={cart} onAdd={onAdd} onRemove={onRemove} />
         </div>
       </div>
     </main>

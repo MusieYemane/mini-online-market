@@ -31,7 +31,7 @@ function LoginComponent(props) {
 
     return (
 
-        <div>
+        <div className="login">
 
             <form ref={formData}>
                 <h2>Login</h2>

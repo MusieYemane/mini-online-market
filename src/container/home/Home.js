@@ -7,6 +7,7 @@ import Buyer from '../../pages/buyer/Buyer';
 import ProductPage from '../../pages/productPage/ProductPage';
 import {Routes, Route } from "react-router-dom";
 import axios from 'axios';
+import RegisterUser from '../../pages/registerUser/RegisterUser';
 
 const Home = (props) => {
 
@@ -65,16 +66,19 @@ const [products, setProducts] = useState([]);
   }
 
   return (
-    <Routes>
-      {/* <Route index element={<Buyer />} /> */}
-      <Route path="login" element={<Login />} />
-      <Route path="productPage" element={<ProductPage />} />
-      <Route path="sellerPage" element={<Seller products={products} />} />
-      <Route path="*" element={<Buyer products={products} onAdd={onAdd} onRemove={onRemove} cart={cartItems} />} />
-      <Route path="/" element={<Buyer products={products} onAdd={onAdd} onRemove={onRemove} cart={cartItems} />}>
 
-      </Route>
-    </Routes>
+      <Routes>
+        {/* <Route index element={<Buyer />} /> */}
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<RegisterUser />} />
+        <Route path="productPage" element={<ProductPage />} />
+        <Route path="sellerPage" element={<Seller products={products} />} />
+        <Route path="*" element={<Buyer products={products} onAdd={onAdd} onRemove={onRemove} cart={cartItems} />} />
+        <Route path="/" element={<Buyer products={products} onAdd={onAdd} onRemove={onRemove} cart={cartItems} />}>
+
+        </Route>
+      </Routes>
+
     // <div>
     //   <div className="container">
     //     {/* <div classname="item1 block">
