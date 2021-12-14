@@ -29,7 +29,7 @@ export default function Seller(props){
         {products.map((product) => (
           <div className="cardContainer"> 
             <div class="card">
-              <img src={product.image} alt="image loading..." id="prodImg"/>
+              <img src={product.image} alt={product.name} id="prodImg"/>
               <h1>{product.name}</h1>
               <p class="price">${product.price}</p>
               <p>Some descriptions about the products..</p>

@@ -52,7 +52,7 @@ export default function ProductPage() {
         <button className="btn">Add Review</button>
       </div>
 
-      <div>
+      <div className="r4">
         <h2> Reviews</h2>
         <p>Such a beautiful product: Musie</p>
       </div>

@@ -17,8 +17,8 @@ export default function Buyer(props){
   };
   useEffect(() => {
     const results = products.filter(product =>
-      product.name.toLowerCase().includes(searchTerm) ||
-      product.seller.toLowerCase().includes(searchTerm)
+      product.name.toLowerCase().includes(searchTerm) 
+      // || product.seller.toLowerCase().includes(searchTerm)
     );
     setSearchResults(results);
   }, [searchTerm]);

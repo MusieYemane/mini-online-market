@@ -1,6 +1,10 @@
+
 #prodImg{
-  width:580px;
+  width:560px;
   height: 560px;
+  border: 10px solid black;
+  border-radius: 18px;
+
   
 }
 
@@ -26,8 +30,9 @@ html{
 .r1{
   text-align: center;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-  margin:10px;
+  /* margin:10px; */
   width: 100%;
+  padding: 12px;
 
 }
 
@@ -38,10 +43,18 @@ html{
 
 }
 .r3{
-
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-  width: 100%;
-  
+  margin:10px;
+  width: 100%;  
+  padding: 20px;
+
+}
+.r4{
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  margin:10px;
+  width: 100%; 
+  padding: 20px;
+
 }
 textarea{
   width: 80%;

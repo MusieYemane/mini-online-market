@@ -6,10 +6,10 @@ export default function Product(props) {
   const { product, onAdd, onRemove } = props;
   return (
     <div className="productCard">
-      <Link to="/productPage" state= {{product:product}}> <img className="small" src={product.image} alt={product.name} /></Link>
+      {/* <Link to="/productPage" state= {{product:product}}> <img className="small" src={product.image} alt={product.name} /></Link> */}
       
       <h4>{product.name}</h4>
-      <p>Posted by: {product.seller}</p>
+      {/* <p>Posted by: {product.seller}</p> */}
       <div>
         <link
           rel="stylesheet"
