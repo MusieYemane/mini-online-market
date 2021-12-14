@@ -3,13 +3,12 @@ import { createSlice, configureStore } from '@reduxjs/toolkit';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 
-// Authentication
-const initialAuthState = { isAuthenticated: false, userId: null };
+const authState = { isAuthenticated: false, userId: null };
+const cartState = { cartItems: [], qty: 0 };
 
-const authSlice = createSlice(
-  {
+const authSlice = createSlice({
     name: 'authentication',
-    initialState: initialAuthState,
+    initialState: authState,
     reducers: {
       login(state, action) {
         const userCred = action.payload;
@@ -39,9 +38,8 @@ const authSlice = createSlice(
             })
             .catch(err => console.log(err.message))
         }
-
-
       },
+
       logout(state) {
         Cookies.remove('user')
         axios.defaults.headers.common = {
@@ -54,39 +52,32 @@ const authSlice = createSlice(
       getUserId(state) {
         return state.userId;
       }
-
     }
+  });
 
+const cartSlice = createSlice({
+  name: "cart",
+  initialState: cartState,
+  reducers: {
+    add(state, action){
+      cartState.qty++;
+      cartState.cartItems.add(action.payload);
+    },
+    remove(state, action){
+      cartState.qty--;
+      cartState.cartItems.reduce(action.payload);
+    }
   }
-);
+});
 
-const authentication = configureStore({
+const store = configureStore({
   reducer: {
-    auth: authSlice.reducer
+    auth: authSlice.reducer,
+    cart: cartSlice.reducer
   }
 });
 
 
-// cart
-const counterReducer = (state = { products: [], cartItems: [], qty: 0 }, action) => {
-  if (action.type === 'onAdd') {
-    return {
-      qty: state.cartItems.qty + 1,
-      product: state.products,
-    }
-  }
-  if (action.type === 'onRemove') {
-    return {
-      qty: state.cartItems.qty + 1,
-      product: state.products
-    };
-  }
-  return state;
-}
-const cart = createStore(counterReducer);
-
-// export auth & cart
-const store = { authentication, cart };
 export default store;
 
 

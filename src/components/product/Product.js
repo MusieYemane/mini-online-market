@@ -4,6 +4,7 @@ import {Outlet, Link} from "react-router-dom"
 
 export default function Product(props) {
   const { product, onAdd, onRemove } = props;
+  
   return (
     <div className="productCard">
       <Link to="/productPage" state= {{product:product}}> <img className="small" src={product.image} alt={product.name} /></Link>
