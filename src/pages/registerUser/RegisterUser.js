@@ -3,7 +3,7 @@ import './RegisterUser.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-function RegisterUser(props) {
+const RegisterUser = (props) => {
 
     const newUserForm = useRef();
     const navigate = useNavigate();
@@ -42,7 +42,7 @@ function RegisterUser(props) {
     }
 
     return (
-        <div>
+        <div className="register">
             <div>
                 <h2>Registration Page</h2>
             </div>
@@ -78,13 +78,13 @@ function RegisterUser(props) {
                     </div>
                     <div>
                         <label htmlFor="rePassword">Reenter Password</label>
-                        <input type="passowrd" label={'rePassword'} name={'rePassword'} />
+                        <input type="password" label={'rePassword'} name={'rePassword'} />
                     </div>
                 </form>
-                <button onClick={registerHandler}>Register</button>
+
+                <button className="btn-register" onClick={registerHandler}>Register</button>
             </div>
         </div>
-
     );
 }
 

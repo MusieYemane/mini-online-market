@@ -58,18 +58,6 @@ export default function Home(props) {
 
   return (
 
-    <html>
-      <header>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
-        <div class="topnav">
-          <div class="brand">Mini Online Shopping</div>
-
-          <div className="menuItem"> <a href="login">Login</a></div>
-
-
-        </div>
-      </header>
-
       <Routes>
         {/* <Route index element={<Buyer />} /> */}
         <Route path="login" element={<Login />} />
@@ -81,7 +69,6 @@ export default function Home(props) {
 
         </Route>
       </Routes>
-    </html>
 
     // <div>
     //   <div className="container">

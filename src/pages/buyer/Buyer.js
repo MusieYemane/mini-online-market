@@ -32,7 +32,7 @@ const Buyer = (props) => {
           <div class= "brand">Mini Online Shopping</div>
           
           <div className="menuItem"> <a href="login">Login</a></div>
-          <div className="menuItem"> <a href="#cart"><i class="fa fa-shopping-cart" > <button id="btnNumItems">{(cart.length==0)?"": cart.length}</button></i></a></div>
+          <div className="menuItem"> <a href="#cart"><i className="fa fa-shopping-cart" > <button id="btnNumItems">{(cart.length==0)?"": cart.length}</button></i></a></div>
 
           <div class= "menuItem">
             <input class= "inpSearch" value={searchTerm} onChange={handleChange} placeholder= "Search..."/>
