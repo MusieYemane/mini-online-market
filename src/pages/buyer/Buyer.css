@@ -1,16 +1,15 @@
 
 
-.body {
-  margin:2px;
-  margin-top: 60px;
+.buyer-content {
   display: flex;
-
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .row1{
+  flex:1;
   display: flex;
-  flex-flow:wrap;
-  flex:0 0 1080px;
+  flex-wrap: wrap;
 }
 .row2{
   flex: 0 0 300px;
