@@ -2,6 +2,7 @@
 import React, {useState, useEffect} from 'react';
 import "./Home.css"
 import Seller from '../../pages/seller/Seller';
+import Login from '../../pages/Login/Login';
 import Buyer from '../../pages/buyer/Buyer';
 import ProductPage from '../../pages/productPage/ProductPage';
 import {Routes, Route } from "react-router-dom";
@@ -27,11 +28,11 @@ const Home = (props) => {
     fetchProducts();
   }, [])
 
-  const[cartItems, setCartItems]= useState([]);
+  const [cartItems, setCartItems] = useState([]);
 
 
 
-  const onAdd= (product)=>{
+  const onAdd = (product) => {
     const exist = cartItems.find((x) => x.id === product.id);
     if (exist) {
       setCartItems(
@@ -40,16 +41,16 @@ const Home = (props) => {
         )
       );
     }
-    else{
+    else {
       setCartItems([...cartItems, { ...product, qty: 1 }]);
-    // alert("Lets add item to cart")
+      // alert("Lets add item to cart")
     }
   }
 
-  const onRemove= (product)=>{
+  const onRemove = (product) => {
 
     const exist = cartItems.find((x) => x.id === product.id);
-    if (exist){
+    if (exist) {
 
       if (exist.qty == 1) {
         setCartItems(cartItems.filter((x) => x.id !== product.id));
@@ -62,19 +63,20 @@ const Home = (props) => {
       }
 
     }
-    
+
   }
 
   return (
     <Routes>
-          {/* <Route index element={<Buyer />} /> */}
-          <Route path="productPage" element={<ProductPage />} />
-          <Route path="sellerPage" element={<Seller products={products}/>} />
-          <Route path="*" element={<Buyer products={products} onAdd={onAdd} onRemove= {onRemove} cart= {cartItems}/>} />
-          <Route path="/" element={<Buyer products={products} onAdd={onAdd} onRemove= {onRemove} cart= {cartItems}/>}>
+      {/* <Route index element={<Buyer />} /> */}
+      <Route path="login" element={<Login />} />
+      <Route path="productPage" element={<ProductPage />} />
+      <Route path="sellerPage" element={<Seller products={products} />} />
+      <Route path="*" element={<Buyer products={products} onAdd={onAdd} onRemove={onRemove} cart={cartItems} />} />
+      <Route path="/" element={<Buyer products={products} onAdd={onAdd} onRemove={onRemove} cart={cartItems} />}>
 
-        </Route>
-      </Routes>
+      </Route>
+    </Routes>
     // <div>
     //   <div className="container">
     //     {/* <div classname="item1 block">
@@ -86,7 +88,7 @@ const Home = (props) => {
     //     </div> */}
 
     //     <ProductPage/>
- 
+
     //   </div>
 
 

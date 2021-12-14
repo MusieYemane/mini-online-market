@@ -1,7 +1,7 @@
-import './Seller.css'
+import './Seller.css';
 
 
-export default function Seller(props){
+const Seller = (props) => {
   //assuming we get products that are from this seller
   const {products}= props;
 
@@ -11,7 +11,7 @@ export default function Seller(props){
 
     <header>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
-      <div class="topnav">
+      <div className="topnav">
           <div class= "brand">Mini Online Shopping </div>
           
           <div className="menuItem"> <a href="#login">Edit Product</a></div>
@@ -24,14 +24,14 @@ export default function Seller(props){
       <p>Welcome to Seller Page</p>
 
     </div>
-
+{/* 
     <div className="col1">
         {products.map((product) => (
           <div className="cardContainer"> 
             <div class="card">
               <img src={product.image} alt={product.name} id="prodImg"/>
               <h1>{product.name}</h1>
-              <p class="price">${product.price}</p>
+              <p className="price">${product.price}</p>
               <p>Some descriptions about the products..</p>
               <p><button className="btn">Edit product</button> </p>
 
@@ -39,7 +39,7 @@ export default function Seller(props){
           </div>
         ))}
 
-    </div>
+    </div> */}
 
     <div >
       <h1>add product page</h1>
@@ -48,3 +48,5 @@ export default function Seller(props){
       
   )
 }
+
+export default Seller;  

@@ -1,6 +1,9 @@
+import react from 'react';
 import { useState, useEffect } from "react";
 import "./CartPage.css"
-export default function CartPage(props){
+
+ 
+const CartPage = (props) => {
   const{cartItems, onAdd, onRemove}= props;
 
   const[totalPrice, setTotalPrice]=useState(0);
@@ -42,3 +45,6 @@ export default function CartPage(props){
 
   )
 }
+
+
+export default CartPage;
