@@ -19,7 +19,7 @@ const CartPage = (props) => {
         cartItems.map((item) => 
           <div className="itemCard">
 
-            <div>{item.name} {item.qty}x <strong>${item.price}</strong></div> 
+            <div>{item.name} <strong>{item.qty}x ${item.price}</strong></div> 
 
             <div className="col-2">
               

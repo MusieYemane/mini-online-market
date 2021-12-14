@@ -8,7 +8,6 @@
 
 .productDetailCard {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  width: 100%;
   margin: 4px;
   text-align: center;
   font-family: arial;
@@ -29,8 +28,9 @@ html{
   text-align: center;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   /* margin:10px; */
-  width: 100%;
   padding: 12px;
+  background-color: whitesmoke;
+
 
 }
 
@@ -43,14 +43,13 @@ html{
 .r3{
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   margin:10px;
-  width: 100%;  
   padding: 20px;
+  background-color: whitesmoke;
 
 }
 .r4{
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   margin:10px;
-  width: 100%; 
   padding: 20px;
 
 }
@@ -61,7 +60,11 @@ textarea{
 
 .reviewCard{
 
-  padding-top:4px;
+  color:white;
+  border-radius: 18px;
+  background-color: grey;
+  padding:2px;
+  margin: 4px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 
 

@@ -12,13 +12,13 @@ const Buyer = (props) => {
     setSearchTerm(event.target.value);
   };
 
-  useEffect(() => {
-    const results = products.filter(
-      (product) => product.name.toLowerCase().includes(searchTerm)
-      // || product.seller.toLowerCase().includes(searchTerm)
-    );
-    setSearchResults(results);
-  }, [searchTerm]);
+  // useEffect(() => {
+  //   const results = products.filter(
+  //     (product) => product.name.toLowerCase().includes(searchTerm)
+  //     // || product.seller.toLowerCase().includes(searchTerm)
+  //   );
+  //   setSearchResults(results);
+  // }, [searchTerm]);
 
   return (
     <main>

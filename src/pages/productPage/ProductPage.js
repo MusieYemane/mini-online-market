@@ -10,23 +10,7 @@ const ProductPage = () => {
 
   return (
     <div className="productDetailCard">
-      {/* <header>
-          <link
-            rel="stylesheet"
-          ></link>
-          <div className="topnav">
-            <div class="brand">Mini Online Shopping</div>
-
-            <div className="menuItem">
-              {" "}
-              <a href="login">product images</a>
-            </div>
-            <div className="menuItem">
-              {" "}
-                  
-            </div> 
-          </div>
-        </header> */}
+      
       <div className="r1">
         <img
           src={product.images[0].imageUri}
@@ -44,8 +28,8 @@ const ProductPage = () => {
         <span className="fa fa-star checked"></span>
         <span className="fa fa-star"></span>
         <span className="fa fa-star"></span>
-        <br/>
-        <button className="btn">Add to Cart</button>
+        {/* <br/>
+        <button className="btn">Add to Cart</button> */}
       </div>
 
       <div className="r2">
@@ -62,7 +46,7 @@ const ProductPage = () => {
 
       <div className='r3'>
         <h2>Add Reviews</h2>
-        <textArea></textArea> <br />
+        <textArea placeholder="Enter your review here ..."></textArea> <br />
         <button className="btn">Add Review</button>
       </div>
 
@@ -75,7 +59,6 @@ const ProductPage = () => {
               <div className="reviewCard">
                 <h4>{rev.user.fname +" "+ rev.user.lname +": "+rev.user.email}</h4> 
                 <p>{rev.comment}</p>
-                <hr/>
               </div>
             : ""
           )
