@@ -52,7 +52,16 @@ button:hover {
   background-color: #f44336;
 }
 
-
+.button{
+  background-color: #04AA6D;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 9.4px 15px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+}
 
 
 
