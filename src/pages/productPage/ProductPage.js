@@ -9,7 +9,7 @@ const ProductPage = () => {
 
 
   return (
-    <div class="productDetailCard">
+    <div className="productDetailCard">
       <div className="r1">
         <img
           src={product.image}
@@ -21,12 +21,12 @@ const ProductPage = () => {
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         />
         <h1>{product.name}</h1>
-        <p class="price">${product.price}</p>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star"></span>
-        <span class="fa fa-star"></span>
+        <p className="price">${product.price}</p>
+        <span className="fa fa-star checked"></span>
+        <span className="fa fa-star checked"></span>
+        <span className="fa fa-star checked"></span>
+        <span className="fa fa-star"></span>
+        <span className="fa fa-star"></span>
         <br/>
         <button className="btn">Add to Cart</button>
       </div>
