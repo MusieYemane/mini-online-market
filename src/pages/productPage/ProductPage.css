@@ -2,10 +2,8 @@
 #prodImg{
   width:560px;
   height: 560px;
-  border: 10px solid black;
   border-radius: 18px;
-
-  
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2); 
 }
 
 .productDetailCard {
@@ -59,4 +57,12 @@ html{
 textarea{
   width: 80%;
   height: 150px;
+}
+
+.reviewCard{
+
+  padding-top:4px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+
+
 }

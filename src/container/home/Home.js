@@ -10,13 +10,13 @@ import axios from 'axios';
 
 const Home = (props) => {
 
- const [products, setProducts] = useState([]);
+const [products, setProducts] = useState([]);
 
  const fetchProducts = async () => {
   axios
     .get("http://localhost:8080/products")
     .then((res) => {
-       setProducts(res.data);
+      setProducts(res.data);
 
     })
     .catch((err) => {
@@ -29,8 +29,6 @@ const Home = (props) => {
   }, [])
 
   const [cartItems, setCartItems] = useState([]);
-
-
 
   const onAdd = (product) => {
     const exist = cartItems.find((x) => x.id === product.id);

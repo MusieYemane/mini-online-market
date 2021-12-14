@@ -2,27 +2,27 @@ import axios from "axios";
 import React, { useState } from "react";
 import {useEffect} from 'react';
 
-function data() {
+// function data() {
 
-  var products=[]
+//   var products=[]
 
-    axios
-      .get("http://localhost:8080/products")
-      .then((res) => {
-        products = res.data
-        console.log(typeof products);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+//     axios
+//       .get("http://localhost:8080/products")
+//       .then((res) => {
+//         products = res.data
+//         console.log(typeof products);
+//       })
+//       .catch((err) => {
+//         console.log(err);
+//       });
 
-      return products;
+//       return products;
 
-  };
+//   };
 
   
 
-export default {products: data()}
+//export default {products: data()}
 
   // const url="http://localhost:8080/products";
   // axios.get(url).then(
