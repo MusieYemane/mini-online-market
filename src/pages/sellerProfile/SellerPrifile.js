@@ -34,7 +34,7 @@ function SellerProfile() {
             .catch(error => {
                 console.log(error);
             });
-        axios.get('http://localhost:8080/orders')
+        axios.get('http://localhost:8080/orders/seller-orders')
             .then(response => {
                 console.log(response.data);
                 setOrders(response.data);
