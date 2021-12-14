@@ -9,6 +9,7 @@ import Login from '../../pages/Login/Login';
 import Buyer from '../../pages/buyer/Buyer';
 import ProductPage from '../../pages/productPage/ProductPage';
 import { Routes, Route } from "react-router-dom";
+import RegisterUser from '../../pages/registerUser/RegisterUser';
 
 
 
@@ -56,16 +57,32 @@ export default function Home(props) {
   }
 
   return (
-    <Routes>
-      {/* <Route index element={<Buyer />} /> */}
-      <Route path="login" element={<Login />} />
-      <Route path="productPage" element={<ProductPage />} />
-      <Route path="sellerPage" element={<Seller products={products} />} />
-      <Route path="*" element={<Buyer products={products} onAdd={onAdd} onRemove={onRemove} cart={cartItems} />} />
-      <Route path="/" element={<Buyer products={products} onAdd={onAdd} onRemove={onRemove} cart={cartItems} />}>
 
-      </Route>
-    </Routes>
+    <html>
+      <header>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+        <div class="topnav">
+          <div class="brand">Mini Online Shopping</div>
+
+          <div className="menuItem"> <a href="login">Login</a></div>
+
+
+        </div>
+      </header>
+
+      <Routes>
+        {/* <Route index element={<Buyer />} /> */}
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<RegisterUser />} />
+        <Route path="productPage" element={<ProductPage />} />
+        <Route path="sellerPage" element={<Seller products={products} />} />
+        <Route path="*" element={<Buyer products={products} onAdd={onAdd} onRemove={onRemove} cart={cartItems} />} />
+        <Route path="/" element={<Buyer products={products} onAdd={onAdd} onRemove={onRemove} cart={cartItems} />}>
+
+        </Route>
+      </Routes>
+    </html>
+
     // <div>
     //   <div className="container">
     //     {/* <div classname="item1 block">
