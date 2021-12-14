@@ -22,14 +22,6 @@ function LoginComponent(props) {
         dispatch(store.login(user));
     }
 
-    const registerHandler = () => {
-        const user = {
-            email: formData.current.username.value,
-            password: formData.current.password.value
-        }
-        dispatch(store.register(user));
-    }
-
     return (
 
         <div className="login">
@@ -52,10 +44,6 @@ function LoginComponent(props) {
                         Login
                     </button> &nbsp;
                     <Link to="/register" className="button">Sign up</Link>
-                    {/* <button type="submit" onClick={() => registerHandler()}>
-                        Signup
-                    </button><br></br> */}
-
                 </div>
 
 
