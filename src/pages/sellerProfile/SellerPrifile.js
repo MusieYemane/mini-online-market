@@ -26,7 +26,7 @@ function SellerProfile() {
                 console.log(error);
             });
 
-        axios.get('http://localhost:8080/products')
+        axios.get('http://localhost:8080/products/my-products')
             .then(response => {
                 console.log(response.data);
                 setProducts(response.data);
@@ -83,7 +83,7 @@ function SellerProfile() {
                 <h2>My Products</h2>
                 <div>
                     {products.map((product) => (
-                        <div className="productCard">
+                        <div className="productCard" key={product.id}>
                             <Link to="/productPage" state={{ product: product }}> <img className="small" src={product.images[0].imageUri} alt={product.name} /></Link>
 
                             <h4>{product.name}</h4>
