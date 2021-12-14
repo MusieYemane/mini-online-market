@@ -1,8 +1,9 @@
 import React, { useRef, useState } from 'react';
-import './LoginCss.css';
+import './Login.css';
 import { useDispatch } from 'react-redux';
-import store, { authActions } from '../../store/index';
+// import store, { authActions } from '../../reduxStore/index';
 import axios from 'axios';
+import store from '../../reduxStore';
 
 
 function LoginComponent(props) {
@@ -17,7 +18,7 @@ function LoginComponent(props) {
             email: formData.current.username.value,
             password: formData.current.password.value
         }
-        dispatch(authActions.login(user));
+        dispatch(store.login(user));
     }
 
     const registerHandler = () => {
@@ -25,7 +26,7 @@ function LoginComponent(props) {
             email: formData.current.username.value,
             password: formData.current.password.value
         }
-        dispatch(authActions.register(user));
+        dispatch(store.register(user));
     }
 
     return (
