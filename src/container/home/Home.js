@@ -2,7 +2,7 @@
 import React, {useState, useEffect} from 'react';
 import "./Home.css"
 import Seller from '../../pages/seller/Seller';
-import Login from '../../pages/Login/Login';
+import Login from '../../pages/login/Login';
 import Buyer from '../../pages/buyer/Buyer';
 import ProductPage from '../../pages/productPage/ProductPage';
 import {Routes, Route } from "react-router-dom";
@@ -17,8 +17,7 @@ const Home = (props) => {
 const [products, setProducts] = useState([]);
 
  const fetchProducts = async () => {
-  axios
-    .get("http://localhost:8080/products")
+  axios.get("http://localhost:8080/products")
     .then((res) => {
       setProducts(res.data);
 
