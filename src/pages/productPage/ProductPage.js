@@ -74,11 +74,12 @@ const ProductPage = () => {
         </div>
         <div>
           <h1>{product.name}</h1>
+          <p className="ItemPrice">${product.price}</p>
+
           <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
           />
-          <p className="price">${product.price}</p>
           <span className="fa fa-star checked"></span>
           <span className="fa fa-star checked"></span>
           <span className="fa fa-star checked"></span>
