@@ -10,6 +10,7 @@ import axios from 'axios';
 import RegisterUser from '../../pages/registerUser/RegisterUser';
 import SellerProfile from '../../pages/sellerProfile/SellerPrifile';
 import OrderPage from '../../pages/orderPage/OrderPage';
+import AddProduct from '../../pages/addProduct/AddProduct';
 
 const Home = (props) => {
 
@@ -73,14 +74,13 @@ const [products, setProducts] = useState([]);
         {/* <Route index element={<Buyer />} /> */}
         <Route path="login" element={<Login />} />
         <Route path="register" element={<RegisterUser />} />
+        <Route path="add-product" element={<AddProduct />} />
         <Route path="order" element={<OrderPage />} />
         <Route path="seller-profile" element={<SellerProfile />} />
         <Route path="productPage" element={<ProductPage />} />
         <Route path="sellerPage" element={<Seller products={products} />} />
         <Route path="*" element={<Buyer products={products} onAdd={onAdd} onRemove={onRemove} cart={cartItems} />} />
-        <Route path="/" element={<Buyer products={products} onAdd={onAdd} onRemove={onRemove} cart={cartItems} />}>
-
-        </Route>
+        <Route path="/" element={<Buyer products={products} onAdd={onAdd} onRemove={onRemove} cart={cartItems} />}> </Route>
       </Routes>
 
     // <div>
