@@ -15,7 +15,7 @@ function SellerProfile() {
     const status = useRef();
 
     const fetchSeller = () => {
-        axios.get('http://localhost:8080/auth/profile/' + '2')
+        axios.get('http://localhost:8080/users/profile/')
             .then(response => {
                 console.log('userId', localStorage.getItem('userId'));
                 setSeller(response.data);
@@ -44,7 +44,10 @@ function SellerProfile() {
             });
     };
 
-    useEffect(fetchSeller, []);
+    // useEffect(fetchSeller, []);
+    useEffect(() => {
+        fetchSeller();
+    }, []);
 
     const deleteHandler = (id) => {
         axios.delete('http://localhost:8080/products/' + id)
@@ -75,13 +78,21 @@ function SellerProfile() {
                 <h1>{seller.fname} {seller.lname}</h1>
             </div>
             <div className="sellerProfile-container-left-name">
-                <p>Email: {seller.email}</p>
-                <p>Role: {sellerRole}</p>
+                <div className="seller-info">
+                    <p>Username: {seller.username}</p>
+                    <p>Email: {seller.email}</p>
+                    <p>Role: {sellerRole}</p>
+                    <p>Member since: {seller.createdAt}</p>
+                    <p>Address: {seller.addresses && seller.addresses[0].street}<br />
+                        <span>{seller.addresses && seller.addresses[0].city}, {seller.addresses && seller.addresses[0].state}. {seller.addresses && seller.addresses[0].zipCode}</span><br /></p>
+                    <p>Payment Type: {seller.paymentMethods && seller.paymentMethods[0].type}</p>
+                    <p>Payment Card#: {seller.paymentMethods && seller.paymentMethods[0].number}</p>
+                </div>
             </div>
             {/* <Link to="/seller/products" className='button'>Show Products</Link> */}
             <div>
                 <h2>My Products</h2>
-                <div>
+                <div className="seller-content">
                     {products.map((product) => (
                         <div className="productCard" key={product.id}>
                             <Link to="/productPage" state={{ product: product }}> <img className="small" src={product.images[0].imageUri} alt={product.name} /></Link>
@@ -111,7 +122,7 @@ function SellerProfile() {
             </div>
             <div>
                 <h2>My Orders</h2>
-                <div>
+                <div className="seller-content">
                     {oreders.map((order) => (
                         <div className="productCard" key={order.id}>
                             <div>
