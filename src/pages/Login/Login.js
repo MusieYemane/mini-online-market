@@ -1,55 +1,74 @@
-import React, { useRef, useState } from 'react';
-import './Login.css';
-import { useDispatch } from 'react-redux';
-// import store, { authActions } from '../../reduxStore/index';
-import axios from 'axios';
-import store from '../../reduxStore';
-import { Link } from 'react-router-dom';
+import React, { useRef, useEffect } from "react";
+import "./Login.css";
+import { useDispatch } from "react-redux";
+import { storeActions } from "../../reduxStore/index";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
+const LoginComponent = (props) => {
+  const authState = useSelector((state) => state.auth);
+  const navigate = useNavigate();
 
-function LoginComponent(props) {
+  const dispatch = useDispatch();
+  const formData = useRef();
 
-    const [user, setUser] = useState({});
+  const loginHandler = (event) => {
+    event.preventDefault();
+    const credintial = {
+      username: formData.current.username.value,
+      password: formData.current.password.value,
+    };
 
-    const dispatch = useDispatch();
-    const formData = useRef();
-
-    const loginHandler = () => {
-        const user = {
-            email: formData.current.username.value,
-            password: formData.current.password.value
-        }
-        dispatch(store.login(user));
+    if (credintial.username && credintial.password) {
+      dispatch(storeActions.auth.login(credintial));
     }
+  };
 
-    return (
+  useEffect(() => {
+    if (authState.isAuthenticated) navigate("/seller-profile");
+  }, [authState.isAuthenticated]);
 
-        <div className="login">
+  return (
+    <div className="login">
+      <form ref={formData} onSubmit={loginHandler}>
+        <h2>Login</h2>
 
-            <form ref={formData}>
-                <h2>Login</h2>
-
-                <div>
-                    <label htmlFor='username' className="label">Name</label><br></br>
-                    <input type="text" placeholder="Enter username" name="username" id="username" />
-                </div>
-
-                <div>
-                    <label htmlFor='password' className="label">Password</label><br></br>
-                    <input type="password" placeholder="Password" name="password" id="password" />
-                </div>
-
-                <div className="btn">
-                    <button type='submit' onClick={() => loginHandler()}>
-                        Login
-                    </button> &nbsp;
-                    <Link to="/register" className="button">Sign up</Link>
-                </div>
-
-
-            </form>
+        <div>
+          <label htmlFor="username" className="label">
+            Name
+          </label>
+          <br></br>
+          <input
+            type="text"
+            placeholder="Enter username"
+            name="username"
+            id="username"
+          />
         </div>
-    )
-}
+
+        <div>
+          <label htmlFor="password" className="label">
+            Password
+          </label>
+          <br></br>
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            id="password"
+          />
+        </div>
+
+        <div className="btn">
+          <button type="submit">Login</button> &nbsp;
+          <Link to="/register" className="button">
+            Sign up
+          </Link>
+        </div>
+      </form>
+    </div>
+  );
+};
 
 export default LoginComponent;

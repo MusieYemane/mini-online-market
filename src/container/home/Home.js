@@ -9,6 +9,8 @@ import {Routes, Route } from "react-router-dom";
 import axios from 'axios';
 import RegisterUser from '../../pages/registerUser/RegisterUser';
 import Checkout from '../../pages/checkout/Checkout';
+import SellerProfile from '../../pages/sellerProfile/SellerPrifile';
+import OrderPage from '../../pages/orderPage/OrderPage';
 
 const Home = (props) => {
 
@@ -76,6 +78,8 @@ const [products, setProducts] = useState([]);
         <Route path="checkout" element={<Checkout cart={cartItems}/>} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<RegisterUser />} />
+        <Route path="order" element={<OrderPage />} />
+        <Route path="seller-profile" element={<SellerProfile />} />
         <Route path="productPage" element={<ProductPage />} />
         <Route path="sellerPage" element={<Seller products={products} />} />
         <Route path="*" element={<Buyer products={products} onAdd={onAdd} onRemove={onRemove} cart={cartItems} />} />
