@@ -1,13 +1,13 @@
 import react, { useEffect, useState } from 'react';
 import './OrderPage.css';
-import axios from 'axios';
+import {axiosIntercepter}  from "../../helper/axiosApiInstance"
 
 const OrderPage = (props) => {
 
     const [order, setOrder] = useState({});
 
     const fetchOrder = async (id) => {
-        axios.get(`http://localhost:8080/orders/` + "5")
+        axiosIntercepter.get(`http://localhost:8080/orders/` + "5")
             .then(res => {
                 setOrder(res.data);
                 console.log(res.data);
