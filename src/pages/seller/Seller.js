@@ -28,7 +28,7 @@ const Seller = (props) => {
     <div className="col1">
         {products.map((product) => (
           <div className="cardContainer"> 
-            <div class="card">
+            <div className="card">
               <img src={product.image} alt={product.name} id="prodImg"/>
               <h1>{product.name}</h1>
               <p className="price">${product.price}</p>

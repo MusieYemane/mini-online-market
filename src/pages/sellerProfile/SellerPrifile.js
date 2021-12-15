@@ -1,9 +1,7 @@
-import react, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './SellerProfile.css';
-import axios from 'axios';
-import store from '../../reduxStore';
+import {axiosIntercepter}  from "../../helper/axiosApiInstance"
 import { Link } from 'react-router-dom';
-import Product from '../../components/product/Product';
 
 function SellerProfile() {
 
@@ -15,7 +13,7 @@ function SellerProfile() {
     const status = useRef();
 
     const fetchSeller = () => {
-        axios.get('http://localhost:8080/users/profile/')
+        axiosIntercepter.get('http://localhost:8080/users/profile/')
             .then(response => {
                 console.log('userId', localStorage.getItem('userId'));
                 setSeller(response.data);
@@ -26,7 +24,7 @@ function SellerProfile() {
                 console.log(error);
             });
 
-        axios.get('http://localhost:8080/products/my-products')
+            axiosIntercepter.get('http://localhost:8080/products/my-products')
             .then(response => {
                 console.log(response.data);
                 setProducts(response.data);
@@ -34,7 +32,8 @@ function SellerProfile() {
             .catch(error => {
                 console.log(error);
             });
-        axios.get('http://localhost:8080/orders/seller-orders')
+
+            axiosIntercepter.get('http://localhost:8080/orders/seller-orders')
             .then(response => {
                 console.log(response.data);
                 setOrders(response.data);
@@ -44,13 +43,12 @@ function SellerProfile() {
             });
     };
 
-    // useEffect(fetchSeller, []);
     useEffect(() => {
         fetchSeller();
     }, []);
 
     const deleteHandler = (id) => {
-        axios.delete('http://localhost:8080/products/' + id)
+        axiosIntercepter.delete('http://localhost:8080/products/' + id)
             .then(response => {
                 console.log(response);
                 fetchSeller();
@@ -61,7 +59,7 @@ function SellerProfile() {
     };
 
     const updateHandler = (id, status) => {
-        axios.put('http://localhost:8080/orders/change-order-status/' + id + '/' + status)
+        axiosIntercepter.put('http://localhost:8080/orders/change-order-status/' + id + '/' + status)
             .then(response => {
                 console.log(response);
                 fetchSeller();
@@ -83,10 +81,10 @@ function SellerProfile() {
                     <p>Email: {seller.email}</p>
                     <p>Role: {sellerRole}</p>
                     <p>Member since: {seller.createdAt}</p>
-                    <p>Address: {seller.addresses && seller.addresses[0].street}<br />
-                        <span>{seller.addresses && seller.addresses[0].city}, {seller.addresses && seller.addresses[0].state}. {seller.addresses && seller.addresses[0].zipCode}</span><br /></p>
-                    <p>Payment Type: {seller.paymentMethods && seller.paymentMethods[0].type}</p>
-                    <p>Payment Card#: {seller.paymentMethods && seller.paymentMethods[0].number}</p>
+                    <p>Address: {seller.addresses && seller.addresses.length > 0 && seller.addresses[0].street}<br />
+                        <span>{seller.addresses && seller.addresses.length > 0 && seller.addresses[0].city}, {seller.addresses && seller.addresses.length > 0 && seller.addresses[0].state}. {seller.addresses && seller.addresses.length > 0 && seller.addresses[0].zipCode}</span><br /></p>
+                    <p>Payment Type: {seller.paymentMethods && seller.paymentMethods.length > 0 && seller.paymentMethods[0].type}</p>
+                    <p>Payment Card#: {seller.paymentMethods && seller.paymentMethods.length > 0 && seller.paymentMethods[0].number}</p>
                 </div>
             </div>
             {/* <Link to="/seller/products" className='button'>Show Products</Link> */}

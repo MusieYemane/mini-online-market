@@ -2,12 +2,13 @@
 import React, {useState, useEffect} from 'react';
 import "./Home.css"
 import Seller from '../../pages/seller/Seller';
-import Login from '../../pages/Login/Login';
+import Login from '../../pages/login/Login';
 import Buyer from '../../pages/buyer/Buyer';
 import ProductPage from '../../pages/productPage/ProductPage';
 import {Routes, Route } from "react-router-dom";
 import axios from 'axios';
 import RegisterUser from '../../pages/registerUser/RegisterUser';
+import Checkout from '../../pages/checkout/Checkout';
 import SellerProfile from '../../pages/sellerProfile/SellerPrifile';
 import OrderPage from '../../pages/orderPage/OrderPage';
 import AddProduct from '../../pages/addProduct/AddProduct';
@@ -17,8 +18,7 @@ const Home = (props) => {
 const [products, setProducts] = useState([]);
 
  const fetchProducts = async () => {
-  axios
-    .get("http://localhost:8080/products")
+  axios.get("http://localhost:8080/products")
     .then((res) => {
       setProducts(res.data);
 
@@ -37,11 +37,14 @@ const [products, setProducts] = useState([]);
   const onAdd = (product) => {
     const exist = cartItems.find((x) => x.id === product.id);
     if (exist) {
-      setCartItems(
-        cartItems.map((x) =>
-          x.id === product.id ? { ...exist, qty: exist.qty + 1 } : x
+      if(exist.qty<product.quantity){
+        setCartItems(
+          cartItems.map((x) =>
+          x.id === product.id ? { ...exist, qty: exist.qty + 1 } : x)
         )
-      );
+      }else{
+        alert("Item out of stock!")
+      }      
     }
     else {
       setCartItems([...cartItems, { ...product, qty: 1 }]);
@@ -72,6 +75,7 @@ const [products, setProducts] = useState([]);
 
       <Routes>
         {/* <Route index element={<Buyer />} /> */}
+        <Route path="checkout" element={<Checkout cart={cartItems}/>} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<RegisterUser />} />
         <Route path="add-product" element={<AddProduct />} />
