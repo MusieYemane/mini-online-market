@@ -8,6 +8,7 @@ import ProductPage from '../../pages/productPage/ProductPage';
 import {Routes, Route } from "react-router-dom";
 import axios from 'axios';
 import RegisterUser from '../../pages/registerUser/RegisterUser';
+import Checkout from '../../pages/checkout/Checkout';
 
 const Home = (props) => {
 
@@ -34,11 +35,14 @@ const [products, setProducts] = useState([]);
   const onAdd = (product) => {
     const exist = cartItems.find((x) => x.id === product.id);
     if (exist) {
-      setCartItems(
-        cartItems.map((x) =>
-          x.id === product.id ? { ...exist, qty: exist.qty + 1 } : x
+      if(exist.qty<product.quantity){
+        setCartItems(
+          cartItems.map((x) =>
+          x.id === product.id ? { ...exist, qty: exist.qty + 1 } : x)
         )
-      );
+      }else{
+        alert("Item out of stock!")
+      }      
     }
     else {
       setCartItems([...cartItems, { ...product, qty: 1 }]);
@@ -69,6 +73,7 @@ const [products, setProducts] = useState([]);
 
       <Routes>
         {/* <Route index element={<Buyer />} /> */}
+        <Route path="checkout" element={<Checkout cart={cartItems}/>} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<RegisterUser />} />
         <Route path="productPage" element={<ProductPage />} />
