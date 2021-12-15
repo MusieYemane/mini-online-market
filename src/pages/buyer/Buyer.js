@@ -24,7 +24,7 @@ const Buyer = (props) => {
     <main>
       <header>
         <div className="topnav">
-          <div class="brand">Mini Online Shopping</div>
+          <div className="brand">Mini Online Shopping</div>
 
           <div className="menuItem">
             {" "}
@@ -42,9 +42,9 @@ const Buyer = (props) => {
             </a>
           </div>
 
-          <div class="menuItem">
+          <div className="menuItem">
             <input
-              class="inpSearch"
+              className="inpSearch"
               value={searchTerm}
               onChange={handleChange}
               placeholder="Search..."
