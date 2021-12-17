@@ -45,21 +45,23 @@ export default function Header(props) {
   }, [authState.user]);
 
   return (
-    <div class="topnav">
-      <div class="brand">Online Market</div>
+    <div className="topnav">
+      <div className="brand">Online Market</div>
 
       <div className="menu-items">
-        {(user && user.authorities[0].authority == "BUYER") && <div className="menuItem search">
-          <input
-            className="inpSearch"
-            value={searchTerm}
-            onChange={handleChange}
-            placeholder="Search..."
-          />
-          {/* <button className="btn" >Search</button> */}
+        {(user && user.authorities[0].authority == "BUYER") &&
+          <div className="menuItem search">
+            <input
+              className="inpSearch"
+              value={searchTerm}
+              onChange={handleChange}
+              placeholder="Search..."
+            />
+          </div>
+        }
 
-          {(user && user.authorities[0].authority == "BUYER") && <div className="menuItem">
-            {" "}
+        {(user && user.authorities[0].authority == "BUYER") &&
+          <div className="menuItem">
             <a>
               <i className="fa fa-shopping-cart">
                 {" "}
@@ -68,14 +70,15 @@ export default function Header(props) {
                 </button>
               </i>
             </a>
-          </div>}
-        </div>}
-        <div class="menuItem">
+          </div>
+        }
+        
+        <div className="menuItem">
           {!user && <Link to="/login" id="login-bttun">Login</Link>}
 
           {user && <Link to="/" id="logout-bttun" onClick={logoutHandler}>Logout</Link>}
         </div>
       </div>
-    </div>
+    </div >
   );
 }

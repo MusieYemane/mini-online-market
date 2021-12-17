@@ -125,12 +125,12 @@ export default function Checkout(props) {
         </div>
       </div>
       <div className="rw2">
-        <div class="row">
-          <div class="col-50">
+        <div className="row">
+          <div className="col-50">
             <h2>Billing Address</h2>
 
             <label for="fname">
-              <i class="fa fa-user"></i> Full Name
+              <i className="fa fa-user"></i> Full Name
             </label>
             <input
               type="text"
@@ -140,7 +140,7 @@ export default function Checkout(props) {
               placeholder="John M. Doe"
             />
             <label for="email">
-              <i class="fa fa-envelope"></i> Email
+              <i className="fa fa-envelope"></i> Email
             </label>
             <input
               type="text"
@@ -150,7 +150,7 @@ export default function Checkout(props) {
               placeholder="john@example.com"
             />
             <label for="adr">
-              <i class="fa fa-address-card-o"></i> Address
+              <i className="fa fa-address-card-o"></i> Address
             </label>
             <input
               type="text"
@@ -160,7 +160,7 @@ export default function Checkout(props) {
               placeholder="542 W. 15th Street"
             />
             <label for="city">
-              <i class="fa fa-institution"></i> City
+              <i className="fa fa-institution"></i> City
             </label>
             <input
               type="text"
@@ -170,8 +170,8 @@ export default function Checkout(props) {
               placeholder="New York"
             />
 
-            <div class="row">
-              <div class="col-50">
+            <div className="row">
+              <div className="col-50">
                 <label for="state">State</label>
                 <input
                   type="text"
@@ -181,7 +181,7 @@ export default function Checkout(props) {
                   placeholder="NY"
                 />
               </div>
-              <div class="col-50">
+              <div className="col-50">
                 <label for="zip">Zip</label>
                 <input
                   type="text"
@@ -194,14 +194,14 @@ export default function Checkout(props) {
             </div>
           </div>
 
-          <div class="col-50">
+          <div className="col-50">
             <h2>Payment</h2>
             <label for="fname">Accepted Cards</label>
-            <div class="icon-container">
-              <i class="fa fa-cc-visa"></i>
-              <i class="fa fa-cc-amex"></i>
-              <i class="fa fa-cc-mastercard"></i>
-              <i class="fa fa-cc-discover"></i>
+            <div className="icon-container">
+              <i className="fa fa-cc-visa"></i>
+              <i className="fa fa-cc-amex"></i>
+              <i className="fa fa-cc-mastercard"></i>
+              <i className="fa fa-cc-discover"></i>
             </div>
             <label for="cname">Name on Card</label>
             <input
@@ -224,8 +224,8 @@ export default function Checkout(props) {
               name="expmonth"
               placeholder="September"
             />
-            <div class="row">
-              <div class="col-50">
+            <div className="row">
+              <div className="col-50">
                 <label for="expyear">Exp Year</label>
                 <input
                   type="text"
@@ -234,7 +234,7 @@ export default function Checkout(props) {
                   placeholder="2018"
                 />
               </div>
-              <div class="col-50">
+              <div className="col-50">
                 <label for="cvv">CVV</label>
                 <input type="text" id="cvv" name="cvv" placeholder="352" />
               </div>
@@ -245,7 +245,7 @@ export default function Checkout(props) {
           <input type="checkbox" onChange={addressHandler} name="sameadr" />{" "}
           Shipping address same as billing
         </label>
-        {/* <input type="submit" value="Continue to checkout" class="btn"/> */}
+        {/* <input type="submit" value="Continue to checkout" className="btn"/> */}
 
         <button className="btn" onClick={checkoutHandler}>
           Checkout

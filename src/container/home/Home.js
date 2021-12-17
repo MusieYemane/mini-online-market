@@ -91,7 +91,7 @@ const Home = (props) => {
   }
 
   return (
-    <div>
+    <div className='home-container'>
       <Header cart = {cartItems}/>
       <Routes>
         
