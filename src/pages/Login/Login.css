@@ -30,7 +30,7 @@ input[type=text], input[type=email],input[type=password]
   box-sizing: border-box;
 }
 
-button {
+/* button {
 
   background-color: #04AA6D;
   color: white;
@@ -44,7 +44,7 @@ button {
 
 button:hover {
   opacity: 0.8;
-}
+} */
 
 .cancelbtn {
   
@@ -52,16 +52,6 @@ button:hover {
   background-color: #f44336;
 }
 
-.button{
-  background-color: #04AA6D;
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding: 9.4px 15px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 14px;
-}
 
 
 
@@ -71,8 +61,6 @@ span.psw {
   float: right;
   padding-top: 16px;
 }
-.btn{
-    margin-left: 20px;
-}
+
 
   

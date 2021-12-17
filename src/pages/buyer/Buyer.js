@@ -45,7 +45,7 @@ const Buyer = (props) => {
               <i className="fa fa-shopping-cart">
                 {" "}
                 <button id="btnNumItems">
-                  {cart.length == 0 ? "" : cart.length}
+                  { cart.length == 0 ? "" : cart.length}
                 </button>
               </i>
             </a>
@@ -63,6 +63,7 @@ const Buyer = (props) => {
         </div>
       </header>
 
+      {/* {<h1>{profile.fname}</h1>} */}
       <div className="buyer-content">
         <div className="row1" id="cart">
           {/* {searchResults

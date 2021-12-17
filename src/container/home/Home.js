@@ -15,6 +15,7 @@ import AddProduct from '../../pages/addProduct/AddProduct';
 import UnapprovedSellers from '../../components/unapprovedSellers/UnapprovedSellers';
 import AdminPage from '../../pages/adminPage/AdminPage';
 import LoginComponent from '../../pages/Login/Login';
+import Header from '../../components/header/Header';
 
 const Home = (props) => {
 
@@ -96,7 +97,7 @@ const Home = (props) => {
         {/* <Route index element={<Buyer />} /> */}
         
 
-        <Route path="buyer-profile" element={<Buyer/>} />
+        {/* <Route path="buyer-profile" element={<Buyer/>} /> */}
 
         <Route path="checkout" element={<Checkout cart={cartItems}/>} />
         <Route path="login" element={<LoginComponent/>} />

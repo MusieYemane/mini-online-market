@@ -12,7 +12,7 @@ export default function Checkout(props){
 
   const[sameAddress, setAddress]= useState(false);
 
-  const[isApprovedBuyer, setIsApprovedBuyer] = useState(true); 
+  const[isApprovedBuyer, setIsApprovedBuyer] = useState(true); //update it from the user profile in redux
 
   const [inputData, setInputData]= useState({})
 
@@ -31,8 +31,8 @@ export default function Checkout(props){
     // authenticate payment here, not done in this project
     return true;
   }
+  
   const checkoutCart=()=>{
-    // remove quantity of the product from db
     //place an order
     const url= "http://localhost:8080/orders"
     const data= {

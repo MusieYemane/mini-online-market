@@ -82,7 +82,7 @@ const RegisterUser = (props) => {
                     </div>
                 </form>
 
-                <button className="btn-register" onClick={registerHandler}>Register</button>
+                <button className="btn" onClick={registerHandler}>Register</button>
             </div>
         </div>
     );

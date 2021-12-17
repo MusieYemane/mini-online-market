@@ -49,7 +49,7 @@ export default function Header(props) {
       <div class="brand">Online Market</div>
       {(user && user.authorities[0].authority == "BUYER") && <div className="menuItem">
         {" "}
-        <a href="#cart">
+        <a>
           <i className="fa fa-shopping-cart">
             {" "}
             <button id="btnNumItems">
