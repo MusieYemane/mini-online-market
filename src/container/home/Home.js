@@ -14,7 +14,7 @@ import OrderPage from '../../pages/orderPage/OrderPage';
 import AddProduct from '../../pages/addProduct/AddProduct';
 import UnapprovedSellers from '../../components/unapprovedSellers/UnapprovedSellers';
 import AdminPage from '../../pages/adminPage/AdminPage';
-import LoginComponent from '../../pages/Login/Login';
+import LoginComponent from '../../pages/login/Login';
 import Header from '../../components/header/Header';
 
 const Home = (props) => {
