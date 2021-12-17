@@ -2,7 +2,6 @@ import Product from "../../components/product/Product";
 import "./Buyer.css";
 import { useState, useEffect } from "react";
 import CartPage from "../cart/CartPage";
-import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 
 
@@ -13,8 +12,6 @@ const Buyer = (props) => {
 
   const profileState = useSelector((state) => state.profile);
   const [profile, setProfile] = useState({});
-
-  const dispatch = useDispatch();
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
@@ -89,7 +86,7 @@ const Buyer = (props) => {
                     ></Product>
                   </div>
                 ))} */}
-{<h1> {profile && profile.fname} </h1>}
+
           {products.map((product) => (
               <Product
                 key={product.id}
