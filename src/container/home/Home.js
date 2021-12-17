@@ -4,7 +4,7 @@ import "./Home.css"
 import Seller from '../../pages/seller/Seller';
 import Buyer from '../../pages/buyer/Buyer';
 import ProductPage from '../../pages/productPage/ProductPage';
-import LoginComponent from '../../pages/Login/Login';
+import LoginComponent from '../../pages/login/Login';
 
 import {Routes, Route } from "react-router-dom";
 import axios from 'axios';
@@ -13,6 +13,8 @@ import Checkout from '../../pages/checkout/Checkout';
 import SellerProfile from '../../pages/sellerProfile/SellerPrifile';
 import OrderPage from '../../pages/orderPage/OrderPage';
 import AddProduct from '../../pages/addProduct/AddProduct';
+import UnapprovedSellers from '../../components/unapprovedSellers/UnapprovedSellers';
+import AdminPage from '../../pages/adminPage/AdminPage';
 
 const Home = (props) => {
 
@@ -94,6 +96,7 @@ const [products, setProducts] = useState([]);
 
         <Route path="checkout" element={<Checkout cart={cartItems}/>} />
         <Route path="login" element={<LoginComponent/>} />
+        <Route path="admin-page" element={<AdminPage/>} />
         <Route path="register" element={<RegisterUser />} />
         <Route path="add-product" element={<AddProduct />} />
         <Route path="order" element={<OrderPage />} />
