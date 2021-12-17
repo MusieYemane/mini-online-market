@@ -118,7 +118,15 @@ function SellerProfile() {
                     ))}
                 </div>
             </div>
+
             <div>
+                <hr />
+                <Link to="/add-product" > Add Product </Link>
+
+            </div>
+
+            <div>
+            <hr />
                 <h2>My Orders</h2>
                 <div className="seller-content">
                     {oreders.map((order) => (

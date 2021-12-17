@@ -1,6 +1,7 @@
 import react, { useRef, useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import './AddProduct.css';
-import axios from 'axios';
+import { axiosIntercepter } from '../../helper/axiosApiInstance';
 
 function AddProduct() {
 
@@ -9,6 +10,7 @@ function AddProduct() {
     const [prodImages, setProdImages] = useState([]);
 
     const formData = useRef();
+    let navigate = useNavigate();
 
     const addFields = () => {
         const image = {
@@ -22,7 +24,6 @@ function AddProduct() {
 
     const addProduct = () => {
         for (let i = 1; i <= images.length; i++) {
-            console.log('value here=>',formData.current[`imageName-${i}`].value);
             const image = {
                 name:formData.current['imageName-' + i].value,
                 imageUri:formData.current['imageUri-' + i].value
@@ -30,18 +31,21 @@ function AddProduct() {
             setProdImages([...prodImages, image]);
         }
 
-        const product={
+        let product={
             name:formData.current['name'].value,
             price:formData.current['price'].value,
             description:formData.current['description'].value,
             quantity:formData.current['quantity'].value,
             images:[...prodImages]
-        }
-        console.log(product.images);
-        axios.post('http://localhost:8080/products', product)
+        };
+        console.log(product);
+        
+        axiosIntercepter.post('http://localhost:8080/products', product)
             .then(res =>{
                 console.log(res.data);
                 setProduct(res.data);
+
+                navigate("/seller-profile");
             })
             .catch(err =>{
                 console.log(err);
@@ -62,7 +66,7 @@ function AddProduct() {
 
                     <div>
                         <label htmlFor="price">Product Price</label>
-                        <input type="text" label="price" name="price" />
+                        <input type="number" label="price" name="price" />
                     </div>
 
                     <div>
@@ -72,7 +76,7 @@ function AddProduct() {
 
                     <div>
                         <label htmlFor="quantity">Product Quantity</label>
-                        <input type="text" label="quantity" name="quantity" />
+                        <input type="number" label="quantity" name="quantity" />
                     </div>
 
                     {images.map(i => {
@@ -87,7 +91,7 @@ function AddProduct() {
                     })}
                     <input type="button" value="+" onClick={() => { addFields() }} />
                 </form>
-                <button onClick={() => { addProduct() }}>Add Product</button>
+                <button className="btn" onClick={() => { addProduct() }}>Add Product</button>
             </div>
         </div>
     );
