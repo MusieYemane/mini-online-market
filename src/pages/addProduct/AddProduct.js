@@ -66,7 +66,7 @@ function AddProduct() {
 
                     <div>
                         <label htmlFor="price">Product Price</label>
-                        <input type="number" label="price" name="price" />
+                        <input type="text" label="price" name="price" />
                     </div>
 
                     <div>
@@ -76,7 +76,7 @@ function AddProduct() {
 
                     <div>
                         <label htmlFor="quantity">Product Quantity</label>
-                        <input type="number" label="quantity" name="quantity" />
+                        <input type="text" label="quantity" name="quantity" />
                     </div>
 
                     {images.map(i => {
