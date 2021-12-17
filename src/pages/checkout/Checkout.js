@@ -117,11 +117,11 @@ export default function Checkout(props) {
                 </strong>
               </div>
 
-              <div>
-                <img id="prodIcon" src={item.images[0].imageUri} />
-              </div>
-            </div>
-          ))}
+          <div>
+            <img id="prodIcon" src={item.images.length > 0 ? item.images[0].imageUri : ""} />
+          </div>
+        </div>
+      ))}
         </div>
       </div>
       <div className="rw2">
