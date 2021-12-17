@@ -13,6 +13,8 @@ import Checkout from '../../pages/checkout/Checkout';
 import SellerProfile from '../../pages/sellerProfile/SellerPrifile';
 import OrderPage from '../../pages/orderPage/OrderPage';
 import AddProduct from '../../pages/addProduct/AddProduct';
+import UnapprovedSellers from '../../components/unapprovedSellers/UnapprovedSellers';
+import AdminPage from '../../pages/adminPage/AdminPage';
 
 const Home = (props) => {
 
@@ -78,6 +80,7 @@ const [products, setProducts] = useState([]);
         {/* <Route index element={<Buyer />} /> */}
         <Route path="checkout" element={<Checkout cart={cartItems}/>} />
         <Route path="login" element={<LoginComponent/>} />
+        <Route path="admin-page" element={<AdminPage/>} />
         <Route path="register" element={<RegisterUser />} />
         <Route path="add-product" element={<AddProduct />} />
         <Route path="order" element={<OrderPage />} />
