@@ -4,7 +4,7 @@ import "./Home.css"
 import Seller from '../../pages/seller/Seller';
 import Buyer from '../../pages/buyer/Buyer';
 import ProductPage from '../../pages/productPage/ProductPage';
-import LoginComponent from '../../pages/Login/Login';
+import LoginComponent from '../../pages/login/Login';
 
 import {Routes, Route } from "react-router-dom";
 import axios from 'axios';
