@@ -4,14 +4,13 @@ import { useDispatch } from "react-redux";
 
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
 
-import { Navigate } from "react-router-dom";
 import { login } from "../../redux/actions/auth";
 import { BUYER, SELLER } from "../../helper/constants"
 
+import { getProfile  } from "../../redux/actions/profile";
+
 const LoginComponent = (props) => {
-  const authState = useSelector((state) => state.auth);
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
@@ -36,6 +35,8 @@ const LoginComponent = (props) => {
           document.getElementById('logout-bttun').classList.add('hidden');
         };
 
+        dispatch(getProfile());
+
         if (user.authorities[0].authority == SELLER) navigate("/seller-profile");
         else if (user.authorities[0].authority == BUYER) navigate("/buyer-profile");
         else navigate("/");
@@ -46,8 +47,6 @@ const LoginComponent = (props) => {
     // useEffect(() => {
     //   if (authState.isLoggedIn) navigate("/seller-profile");
     // }, [authState.isLoggedIn]);
-
-  if (authState.isLoggedIn) return <Navigate to="/seller-profile" />;
 
   return (
     <div className="login">

@@ -1,4 +1,5 @@
 import axios from "axios";
+import { axiosIntercepter } from "../helper/axiosApiInstance";
 
 const API_URL = "http://localhost:8080/auth/";
 
@@ -16,6 +17,14 @@ class AuthService {
 
   logout() {
     localStorage.removeItem("user");
+  }
+
+  profile(){
+    return axiosIntercepter.get('http://localhost:8080/users/profile')
+    .then((res) => {
+      
+      return res.data;
+    })
   }
 }
 

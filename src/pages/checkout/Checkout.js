@@ -8,7 +8,20 @@ export default function Checkout(){
   const location = useLocation();
   const { cartItems } = location.state;
 
+  const[sameAddress, setAddress]= useState(false);
+
   const[isApprovedBuyer, setIsApprovedBuyer] = useState(false);
+
+  const [inputData, setInputData]= useState({name: "Musie Yemane", emial: "mosi@gmail.com", address: "1104 Meadwallow bld 144", city: "Fairfield", state:"IA", zip:52557})
+  
+  const addressHandler= ()=>{
+    (sameAddress)? setAddress(false): setAddress(true)
+    if(sameAddress){
+
+    }else{
+
+    }
+  }
   const checkoutHandler=()=>{
     if(isApprovedBuyer){
       alert("proceed to check out")
@@ -99,7 +112,7 @@ export default function Checkout(){
           
         </div>
         <label>
-          <input type="checkbox" checked="checked" name="sameadr"/> Shipping address same as billing
+          <input type="checkbox" onChange= {addressHandler} name="sameadr"/> Shipping address same as billing
         </label>
         {/* <input type="submit" value="Continue to checkout" class="btn"/> */}
         

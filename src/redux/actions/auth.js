@@ -49,9 +49,9 @@ export const register = (username, email, password) => (dispatch) => {
 export const login = (username, password) => (dispatch) => {
   return AuthService.login(username, password).then(
     (data) => {
-      // axios.defaults.headers.common = {
-      //   Authorization: "Bearer " + data.token,
-      // };
+      axios.defaults.headers.common = {
+        Authorization: "Bearer " + data.token,
+      };
 
       dispatch({
         type: LOGIN_SUCCESS,
