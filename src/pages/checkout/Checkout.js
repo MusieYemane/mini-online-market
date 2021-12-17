@@ -1,39 +1,79 @@
 
 import "./Checkout.css"
-import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Profiler, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import axios from "axios";
 
-export default function Checkout(){
+export default function Checkout(props){
 
   const location = useLocation();
-  const { cartItems } = location.state;
+
+  const { cartItems} = location.state;
 
   const[sameAddress, setAddress]= useState(false);
 
-  const[isApprovedBuyer, setIsApprovedBuyer] = useState(false);
+  const[isApprovedBuyer, setIsApprovedBuyer] = useState(true); 
 
-  const [inputData, setInputData]= useState({name: "Musie Yemane", emial: "mosi@gmail.com", address: "1104 Meadwallow bld 144", city: "Fairfield", state:"IA", zip:52557})
-  
+  const [inputData, setInputData]= useState({})
+
+  let navigate = useNavigate();
+
   const addressHandler= ()=>{
     (sameAddress)? setAddress(false): setAddress(true)
-    if(sameAddress){
-
+    if(!sameAddress){
+      setInputData({name: "Musie Yemane", emial: "mosi@gmail.com", address: "1104 Meadwallow bld 144", city: "Fairfield", state:"IA", zip:52557})
     }else{
+      setInputData({name: "", emial: "", address: "", city: "", state:"", zip:0})
 
     }
   }
+  const validPayment=()=>{
+    // authenticate payment here, not done in this project
+    return true;
+  }
+  const checkoutCart=()=>{
+    // remove quantity of the product from db
+    //place an order
+    const url= "http://localhost:8080/orders"
+    const data= {
+      "id": 0,
+      "price": 0,
+      "orderItems": [
+        {
+          "id": 0,
+          "quantity": 0,
+          "productId": 0,
+          "orderId": 0
+        }
+      ],
+      "shippingAddressId": 0,
+      "paymentMethodId": 0
+    }
+    axios.post(url, data).then(res=> {
+      alert("Order placed!");
+      navigate("/buyer-profile", { replace: true });
+
+    } 
+      ).catch(err=>{
+        alert("Order Failed")
+        console.log(err)
+      })
+
+    //add the transaction to buyer history
+    
+  }
   const checkoutHandler=()=>{
-    if(isApprovedBuyer){
-      alert("proceed to check out")
+    if(isApprovedBuyer && validPayment){
+      checkoutCart();
+
     }
     else{
-      alert("Proceed to login")
+      navigate("/login", { replace: true })
       // return <Navigate to='/login' />
     }
 
   }
   
-
   return (
     <div>
       <div className="rw1">
@@ -63,22 +103,22 @@ export default function Checkout(){
           <div class="col-50">
             <h2>Billing Address</h2>
             <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-            <input type="text" id="fname" name="firstname" placeholder="John M. Doe"/>
+            <input type="text" id="fname" name="firstname" value={inputData.name} placeholder="John M. Doe"/>
             <label for="email"><i class="fa fa-envelope"></i> Email</label>
-            <input type="text" id="email" name="email" placeholder="john@example.com"/>
+            <input type="text" id="email" name="email" value= {inputData.emial} placeholder="john@example.com" />
             <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street"/>
+            <input type="text" id="adr" name="address" value= {inputData.address} placeholder="542 W. 15th Street"/>
             <label for="city"><i class="fa fa-institution"></i> City</label>
-            <input type="text" id="city" name="city" placeholder="New York"/>
+            <input type="text" id="city" name="city" value={inputData.city} placeholder="New York"/>
 
             <div class="row">
               <div class="col-50">
                 <label for="state">State</label>
-                <input type="text" id="state" name="state" placeholder="NY"/>
+                <input type="text" id="state" name="state" value= {inputData.state} placeholder="NY"/>
               </div>
               <div class="col-50">
                 <label for="zip">Zip</label>
-                <input type="text" id="zip" name="zip" placeholder="10001"/>
+                <input type="text" id="zip" name="zip" value= {inputData.zip} placeholder="10001"/>
               </div>
             </div>
           </div>
@@ -116,7 +156,7 @@ export default function Checkout(){
         </label>
         {/* <input type="submit" value="Continue to checkout" class="btn"/> */}
         
-        <button className="btn">Checkout</button>
+        <button className="btn" onClick= {checkoutHandler}>Checkout</button>
 
       </div>
     

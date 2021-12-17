@@ -35,6 +35,21 @@ const [products, setProducts] = useState([]);
 
   const [cartItems, setCartItems] = useState([]);
 
+
+  // const updateCartItems=()=>{
+  //   const url= "http://localhost:8080/shopping-cart";
+  //   let d={id: 4}
+  //   const data= cartItems.map(item=>{
+  //     d.quantity= item.qty;
+  //     d.productId= item.id;
+  //   })
+    
+  //   axios.post(url, data).catch(err=> console.log(err)) 
+  // }
+
+  // useEffect(updateCartItems, [cartItems])
+
+
   const onAdd = (product) => {
     const exist = cartItems.find((x) => x.id === product.id);
     if (exist) {
@@ -76,6 +91,7 @@ const [products, setProducts] = useState([]);
 
       <Routes>
         {/* <Route index element={<Buyer />} /> */}
+
         <Route path="checkout" element={<Checkout cart={cartItems}/>} />
         <Route path="login" element={<LoginComponent/>} />
         <Route path="register" element={<RegisterUser />} />
