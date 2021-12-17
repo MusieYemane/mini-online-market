@@ -80,9 +80,8 @@ const LoginComponent = (props) => {
           />
         </div>
 
-        <div className="btn">
-          <button type="submit" className="login-bttun">Login</button>
-          <button type="submit" className="logout-bttun" hidden>Logout</button>&nbsp;
+        <div>
+          <button type="submit" className="login-bttun">Login</button>&nbsp;
           <Link to="/register" className="button">
             Sign up
           </Link>

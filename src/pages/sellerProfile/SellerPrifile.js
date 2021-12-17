@@ -93,7 +93,7 @@ function SellerProfile() {
                 <div className="seller-content">
                     {products.map((product) => (
                         <div className="productCard" key={product.id}>
-                            <Link to="/productPage" state={{ product: product }}> <img className="small" src={product.images[0].imageUri} alt={product.name} /></Link>
+                            <Link to="/productPage" state={{ product: product }}> <img className="small" src={product.images.length > 0 && product.images[0].imageUri} alt={product.name} /></Link>
 
                             <h4>{product.name}</h4>
                             <div>

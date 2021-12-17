@@ -45,9 +45,9 @@ export default function Header(props) {
   }, [authState.user]);
 
   return (
-    <div class="topnav">
-      <div class="brand">Online Market</div>
-      <div class="menu-items">
+    <div className="topnav">
+      <div className="brand">Online Market</div>
+      <div className="menu-items">
       {(user && user.authorities[0].authority == "BUYER") && <div className="menuItem search">
           <input
             className="inpSearch"
@@ -68,7 +68,7 @@ export default function Header(props) {
             </i>
           </a>
         </div>}
-        <div class="menuItem">
+        <div className="menuItem">
           {!user && <Link to="/login" id="login-bttun">Login</Link>}
 
           {user && <Link to="/" id="logout-bttun" onClick={logoutHandler}>Logout</Link>}

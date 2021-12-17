@@ -91,7 +91,7 @@ const Home = (props) => {
   }
 
   return (
-    <div>
+    <div className='home-container'>
       <Header cart = {cartItems}/>
       <Routes>
         
@@ -111,27 +111,7 @@ const Home = (props) => {
 
         <Route path="/" element={<Buyer products={products} onAdd={onAdd} onRemove={onRemove} cart={cartItems} />}> </Route>
       </Routes>
-    </div>
-
-
-    // <div>
-    //   <div className="container">
-    //     {/* <div classname="item1 block">
-    //       <Buyer products={products} onAdd={onAdd} onRemove= {onRemove} cart= {cartItems}/>
-    //     </div> */}
-
-    //     {/* <div>
-    //       <Seller products={products}/>
-    //     </div> */}
-
-    //     <ProductPage/>
-
-    //   </div>
-
-
-    // </div>  
-
-  )
+    </div>)
 }
 
 export default Home;
