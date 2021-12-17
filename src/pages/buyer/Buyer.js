@@ -31,6 +31,7 @@ const Buyer = (props) => {
 
   return (
     <main>
+<<<<<<< HEAD
       <header>
         <div className="topnav">
           <div className="brand">Mini Online Shopping</div>
@@ -64,6 +65,8 @@ const Buyer = (props) => {
       </header>
 
       {/* {<h1>{profile.fname}</h1>} */}
+=======
+>>>>>>> cc2fb65d847675a624640983fae881fcd8909287
       <div className="buyer-content">
         <div className="row1" id="cart">
           {/* {searchResults
