@@ -2,9 +2,10 @@
 import React, {useState, useEffect} from 'react';
 import "./Home.css"
 import Seller from '../../pages/seller/Seller';
-import Login from '../../pages/login/Login';
 import Buyer from '../../pages/buyer/Buyer';
 import ProductPage from '../../pages/productPage/ProductPage';
+import LoginComponent from '../../pages/Login/Login';
+
 import {Routes, Route } from "react-router-dom";
 import axios from 'axios';
 import RegisterUser from '../../pages/registerUser/RegisterUser';
@@ -75,7 +76,7 @@ const [products, setProducts] = useState([]);
       <Routes>
         {/* <Route index element={<Buyer />} /> */}
         <Route path="checkout" element={<Checkout cart={cartItems}/>} />
-        <Route path="login" element={<Login />} />
+        <Route path="login" element={<LoginComponent/>} />
         <Route path="register" element={<RegisterUser />} />
         <Route path="order" element={<OrderPage />} />
         <Route path="seller-profile" element={<SellerProfile />} />
