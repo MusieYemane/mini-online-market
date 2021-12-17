@@ -76,65 +76,65 @@ export default function Header(props) {
     </div>
   );
 
-  if (user.authorities[0].authority == "BUYER") {
-    return (
-      <header>
-        <div className="topnav">
-          <div className="brand">Mini Online Shopping</div>
+  // if (user.authorities[0].authority == "BUYER") {
+  //   return (
+  //     <header>
+  //       <div className="topnav">
+  //         <div className="brand">Mini Online Shopping</div>
 
-          <div className="menuItem">
-            {" "}
-            <a href="login">Logout</a>
-          </div>
-          <div className="menuItem">
-            {" "}
-            <a href="#cart">
-              <i className="fa fa-shopping-cart">
-                {" "}
-                <button id="btnNumItems">
-                  {cart.length == 0 ? "" : cart.length}
-                </button>
-              </i>
-            </a>
-          </div>
+  //         <div className="menuItem">
+  //           {" "}
+  //           <a href="login">Logout</a>
+  //         </div>
+  //         <div className="menuItem">
+  //           {" "}
+  //           <a href="#cart">
+  //             <i className="fa fa-shopping-cart">
+  //               {" "}
+  //               <button id="btnNumItems">
+  //                 {cart.length == 0 ? "" : cart.length}
+  //               </button>
+  //             </i>
+  //           </a>
+  //         </div>
 
-          <div className="menuItem">
-            <input
-              className="inpSearch"
-              value={searchTerm}
-              onChange={handleChange}
-              placeholder="Search..."
-            />
-            {/* <button className="btn" >Search</button> */}
-          </div>
-        </div>
-      </header>
-    );
-  }
-  else if (user.authorities[0].authority == "SELLER") {
-    return (
-      <header>
-        <div className="topnav">
-          <div className="brand">Mini Online Shopping</div>
-          <div className="menuItem">
-            <a href="login">Login</a>
-          </div>
-        </div>
-      </header>
-    );
-  }
-  else {
-    return (
-      <header>
-        <div className="topnav">
-          <div className="brand">Mini Online Shopping</div>
-          <div className="menuItem">
-            <a href="login">Login</a>
-          </div>
-        </div>
-      </header>
-    );
-  }
+  //         <div className="menuItem">
+  //           <input
+  //             className="inpSearch"
+  //             value={searchTerm}
+  //             onChange={handleChange}
+  //             placeholder="Search..."
+  //           />
+  //           {/* <button className="btn" >Search</button> */}
+  //         </div>
+  //       </div>
+  //     </header>
+  //   );
+  // }
+  // else if (user.authorities[0].authority == "SELLER") {
+  //   return (
+  //     <header>
+  //       <div className="topnav">
+  //         <div className="brand">Mini Online Shopping</div>
+  //         <div className="menuItem">
+  //           <a href="login">Login</a>
+  //         </div>
+  //       </div>
+  //     </header>
+  //   );
+  // }
+  // else {
+  //   return (
+  //     <header>
+  //       <div className="topnav">
+  //         <div className="brand">Mini Online Shopping</div>
+  //         <div className="menuItem">
+  //           <a href="login">Login</a>
+  //         </div>
+  //       </div>
+  //     </header>
+  //   );
+  // }
 }
 
 
