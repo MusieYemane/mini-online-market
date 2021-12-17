@@ -4,7 +4,6 @@ import "./Home.css"
 import Seller from '../../pages/seller/Seller';
 import Buyer from '../../pages/buyer/Buyer';
 import ProductPage from '../../pages/productPage/ProductPage';
-import LoginComponent from '../../pages/login/Login';
 
 import {Routes, Route } from "react-router-dom";
 import axios from 'axios';
@@ -15,6 +14,7 @@ import OrderPage from '../../pages/orderPage/OrderPage';
 import AddProduct from '../../pages/addProduct/AddProduct';
 import UnapprovedSellers from '../../components/unapprovedSellers/UnapprovedSellers';
 import AdminPage from '../../pages/adminPage/AdminPage';
+import LoginComponent from '../../pages/Login/Login';
 
 const Home = (props) => {
 
@@ -93,6 +93,9 @@ const [products, setProducts] = useState([]);
 
       <Routes>
         {/* <Route index element={<Buyer />} /> */}
+        
+
+        <Route path="buyer-profile" element={<Buyer/>} />
 
         <Route path="checkout" element={<Checkout cart={cartItems}/>} />
         <Route path="login" element={<LoginComponent/>} />
