@@ -82,7 +82,7 @@ const LoginComponent = (props) => {
 
         <div >
           <button type="submit" className="btn">Login</button>
-          <button type="submit" className="btn" hidden>Logout</button>&nbsp;
+          {/* <button type="submit" className="btn" hidden>Logout</button>&nbsp; */}
           <br/>
           <br/>
 

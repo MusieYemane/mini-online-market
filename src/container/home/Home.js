@@ -14,11 +14,7 @@ import OrderPage from '../../pages/orderPage/OrderPage';
 import AddProduct from '../../pages/addProduct/AddProduct';
 import UnapprovedSellers from '../../components/unapprovedSellers/UnapprovedSellers';
 import AdminPage from '../../pages/adminPage/AdminPage';
-<<<<<<< HEAD
 import LoginComponent from '../../pages/Login/Login';
-=======
-import LoginComponent from '../../pages/login/Login';
->>>>>>> cc2fb65d847675a624640983fae881fcd8909287
 import Header from '../../components/header/Header';
 
 const Home = (props) => {
@@ -99,13 +95,10 @@ const Home = (props) => {
       <Header cart = {cartItems}/>
       <Routes>
         
-<<<<<<< HEAD
 
         {/* <Route path="buyer-profile" element={<Buyer/>} /> */}
 
         <Route path="checkout" element={<Checkout cart={cartItems}/>} />
-=======
->>>>>>> cc2fb65d847675a624640983fae881fcd8909287
         <Route path="login" element={<LoginComponent/>} />
         <Route path="register" element={<RegisterUser />} />
 
