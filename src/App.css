@@ -59,18 +59,18 @@ body{
 
 
 .brand {
-  float: left;
-  margin-left: 20px;
-  margin-top: 10px;
-  ;
   font-size: 28px;
   text-align: center;
   font-weight: bold;
   color: whitesmoke;
-
+  min-width: 150px;
 }
 
 .topnav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   background-color: black;
   color: white;
   position: fixed;
@@ -80,8 +80,26 @@ body{
   height: 60px
 }
 
+.menu-items{
+  flex:1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.search{
+  flex:1;
+  
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.search > input{
+  width: 100%;
+  max-width: 463px;
+}
+
 .menuItem {
-  float: right;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -98,8 +116,4 @@ body{
   margin: 0px;
   font-size: 14px;
   font-weight: bold;
-}
-
-.hidden {
-  display: none;
 }

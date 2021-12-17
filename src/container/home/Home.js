@@ -14,7 +14,8 @@ import OrderPage from '../../pages/orderPage/OrderPage';
 import AddProduct from '../../pages/addProduct/AddProduct';
 import UnapprovedSellers from '../../components/unapprovedSellers/UnapprovedSellers';
 import AdminPage from '../../pages/adminPage/AdminPage';
-import LoginComponent from '../../pages/Login/Login';
+import LoginComponent from '../../pages/login/Login';
+import Header from '../../components/header/Header';
 
 const Home = (props) => {
 
@@ -93,21 +94,21 @@ const Home = (props) => {
     <div>
       <Header cart = {cartItems}/>
       <Routes>
-        {/* <Route index element={<Buyer />} /> */}
         
-
-        <Route path="buyer-profile" element={<Buyer/>} />
-
-        <Route path="checkout" element={<Checkout cart={cartItems}/>} />
         <Route path="login" element={<LoginComponent/>} />
-        <Route path="admin-page" element={<AdminPage/>} />
         <Route path="register" element={<RegisterUser />} />
-        <Route path="add-product" element={<AddProduct />} />
-        <Route path="order" element={<OrderPage />} />
+
         <Route path="seller-profile" element={<SellerProfile />} />
+        <Route path="add-product" element={<AddProduct />} />
         <Route path="productPage" element={<ProductPage />} />
         <Route path="sellerPage" element={<Seller products={products} />} />
-        <Route path="*" element={<Buyer products={products} onAdd={onAdd} onRemove={onRemove} cart={cartItems} />} />
+
+        <Route path="admin-profile" element={<AdminPage/>} />
+
+        <Route path="buyer-profile" element={<Buyer products={products} onAdd={onAdd} onRemove={onRemove} cart={cartItems} />}/>
+        <Route path="order" element={<OrderPage />} />
+        <Route path="checkout" element={<Checkout cart={cartItems}/>} />
+
         <Route path="/" element={<Buyer products={products} onAdd={onAdd} onRemove={onRemove} cart={cartItems} />}> </Route>
       </Routes>
     </div>
