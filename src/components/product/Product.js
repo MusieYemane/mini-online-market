@@ -7,7 +7,9 @@ export default function Product(props) {
 
   return (
     <div className="productCard">
+      <div id="imgContainer">
       <Link to="/productPage" state= {{product:product}}> <img className="small" src={product.images[0].imageUri} alt={product.name} /></Link>
+      </div>
       
       <h4>{product.name}</h4>
       {/* <p>Posted by: {product.seller}</p> */}

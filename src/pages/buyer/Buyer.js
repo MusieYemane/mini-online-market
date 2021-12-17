@@ -11,7 +11,7 @@ const Buyer = (props) => {
   //const [searchResults, setSearchResults] = useState(products);
 
   const profileState = useSelector((state) => state.profile);
-  const [profile, setProfile] = useState({});
+  const [profile, setProfile] = useState(profileState.profile);
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
@@ -86,6 +86,7 @@ const Buyer = (props) => {
                     ></Product>
                   </div>
                 ))} */}
+
 
           {products.map((product) => (
               <Product
