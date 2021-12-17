@@ -9,17 +9,6 @@ const Seller = (props) => {
 
     <div>
 
-    <header>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
-      <div className="topnav">
-          <div class= "brand">Mini Online Shopping </div>
-          
-          <div className="menuItem"> <a href="#login">Edit Product</a></div>
-          <div className="menuItem"> <a href="#login">Add product</a></div>
-          <div className="menuItem"> <a href="#login">Show products</a></div>
-      </div>
-    </header>
-
     <div class= "body">
       <p>Welcome to Seller Page</p>
 

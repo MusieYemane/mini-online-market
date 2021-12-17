@@ -31,38 +31,6 @@ const Buyer = (props) => {
 
   return (
     <main>
-      <header>
-        <div className="topnav">
-          <div className="brand">Mini Online Shopping</div>
-          <div className="menuItem">
-            <input
-              className="inpSearch"
-              value={searchTerm}
-              onChange={handleChange}
-              placeholder="Search..."
-            />
-            {/* <button className="btn" >Search</button> */}
-          </div>
-          <div className="menuItem">
-            {" "}
-            <a href="login">Login</a>
-          </div>
-          <div className="menuItem">
-            {" "}
-            <a href="#cart">
-              <i className="fa fa-shopping-cart">
-                {" "}
-                <button id="btnNumItems">
-                  { cart.length == 0 ? "" : cart.length}
-                </button>
-              </i>
-            </a>
-          </div>
-
-         
-        </div>
-      </header>
-
       {/* {<h1>{profile.fname}</h1>} */}
       <div className="buyer-content">
         <div className="row1" id="cart">
