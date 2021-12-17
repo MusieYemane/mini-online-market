@@ -27,6 +27,15 @@ function UnapprovedReviews() {
                     console.log(err);
                 });
         }
+
+        if(!reviews || reviews.length === 0){
+            return (
+                <div>
+                    <p>No unapproved reviews</p>
+                </div>
+            )
+        }
+        
     
         return (
             <div>

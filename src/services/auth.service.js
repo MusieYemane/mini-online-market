@@ -17,6 +17,7 @@ class AuthService {
 
   logout() {
     localStorage.removeItem("user");
+    return Promise.resolve(null);
   }
 
   profile(){

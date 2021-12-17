@@ -1,6 +1,6 @@
 import {
-  LOGIN_SUCCESS,
-  LOGIN_FAIL,
+  PROFILE_SUCCESS,
+  PROFILE_FAIL,
   SET_MESSAGE,
 } from "./types";
 import AuthService from "../../services/auth.service";
@@ -9,7 +9,7 @@ export const getProfile = () => (dispatch) => {
   return AuthService.profile().then(
     (data) => {
       dispatch({
-        type: LOGIN_SUCCESS,
+        type: PROFILE_SUCCESS,
         payload:  {profile: data},
       });
 
@@ -24,7 +24,7 @@ export const getProfile = () => (dispatch) => {
         error.toString();
 
       dispatch({
-        type: LOGIN_FAIL,
+        type: PROFILE_FAIL,
       });
 
       dispatch({

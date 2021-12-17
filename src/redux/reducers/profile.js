@@ -1,8 +1,4 @@
-import {
-  LOGIN_SUCCESS,
-  LOGOUT,
-} from "../actions/types";
-
+import { PROFILE_FAIL, PROFILE_SUCCESS } from "../actions/types";
 
 const initialState = { profile: null };
 
@@ -10,12 +6,12 @@ export default function (state = initialState, action) {
   const { type, payload } = action;
 
   switch (type) {
-    case LOGIN_SUCCESS:
+    case PROFILE_SUCCESS:
       return {
         ...state,
         profile: payload.profile,
       };
-    case LOGOUT:
+    case PROFILE_FAIL:
       return {
         ...state,
         profile: null,

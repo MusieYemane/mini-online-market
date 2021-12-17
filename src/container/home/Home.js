@@ -1,11 +1,11 @@
 
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import "./Home.css"
 import Seller from '../../pages/seller/Seller';
 import Buyer from '../../pages/buyer/Buyer';
 import ProductPage from '../../pages/productPage/ProductPage';
 
-import {Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import axios from 'axios';
 import RegisterUser from '../../pages/registerUser/RegisterUser';
 import Checkout from '../../pages/checkout/Checkout';
@@ -18,17 +18,17 @@ import LoginComponent from '../../pages/Login/Login';
 
 const Home = (props) => {
 
-const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([]);
 
- const fetchProducts = async () => {
-  axios.get("http://localhost:8080/products")
-    .then((res) => {
-      setProducts(res.data);
+  const fetchProducts = async () => {
+    axios.get("http://localhost:8080/products")
+      .then((res) => {
+        setProducts(res.data);
 
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   useEffect(() => {
@@ -55,14 +55,14 @@ const [products, setProducts] = useState([]);
   const onAdd = (product) => {
     const exist = cartItems.find((x) => x.id === product.id);
     if (exist) {
-      if(exist.qty<product.quantity){
+      if (exist.qty < product.quantity) {
         setCartItems(
           cartItems.map((x) =>
-          x.id === product.id ? { ...exist, qty: exist.qty + 1 } : x)
+            x.id === product.id ? { ...exist, qty: exist.qty + 1 } : x)
         )
-      }else{
+      } else {
         alert("Item out of stock!")
-      }      
+      }
     }
     else {
       setCartItems([...cartItems, { ...product, qty: 1 }]);
@@ -90,7 +90,8 @@ const [products, setProducts] = useState([]);
   }
 
   return (
-
+    <div>
+      <Header cart = {cartItems}/>
       <Routes>
         {/* <Route index element={<Buyer />} /> */}
         
@@ -109,6 +110,8 @@ const [products, setProducts] = useState([]);
         <Route path="*" element={<Buyer products={products} onAdd={onAdd} onRemove={onRemove} cart={cartItems} />} />
         <Route path="/" element={<Buyer products={products} onAdd={onAdd} onRemove={onRemove} cart={cartItems} />}> </Route>
       </Routes>
+    </div>
+
 
     // <div>
     //   <div className="container">

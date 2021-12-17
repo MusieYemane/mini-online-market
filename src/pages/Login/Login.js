@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 import { login } from "../../redux/actions/auth";
-import { BUYER, SELLER } from "../../helper/constants"
+import { BUYER, SELLER , ADMIN} from "../../helper/constants"
 
 import { getProfile  } from "../../redux/actions/profile";
 
@@ -26,19 +26,20 @@ const LoginComponent = (props) => {
     if (credintial.username && credintial.password) {
       dispatch(login(credintial.username, credintial.password)).then((user) => {
 
-        document.getElementById('login-bttun').classList.add('hidden');
-        document.getElementById('logout-bttun').classList.remove('hidden');
+        // document.getElementById('login-bttun').classList.add('hidden');
+        // document.getElementById('logout-bttun').classList.remove('hidden');
         
-        document.getElementById('logout-bttun').onclick = (event) => {
-          localStorage.removeItem("user");
-          document.getElementById('login-bttun').classList.remove('hidden');
-          document.getElementById('logout-bttun').classList.add('hidden');
-        };
+        // document.getElementById('logout-bttun').onclick = (event) => {
+        //   localStorage.removeItem("user");
+        //   document.getElementById('login-bttun').classList.remove('hidden');
+        //   document.getElementById('logout-bttun').classList.add('hidden');
+        // };
 
         dispatch(getProfile());
 
         if (user.authorities[0].authority == SELLER) navigate("/seller-profile");
         else if (user.authorities[0].authority == BUYER) navigate("/buyer-profile");
+        else if (user.authorities[0].authority == ADMIN) navigate("/admin-profile");
         else navigate("/");
       });
     }
@@ -80,7 +81,8 @@ const LoginComponent = (props) => {
         </div>
 
         <div className="btn">
-          <button type="submit">Login</button> &nbsp;
+          <button type="submit" className="login-bttun">Login</button>
+          <button type="submit" className="logout-bttun" hidden>Logout</button>&nbsp;
           <Link to="/register" className="button">
             Sign up
           </Link>
