@@ -89,7 +89,7 @@ export default function Checkout(props){
           </div>
 
           <div>
-            <img id="prodIcon" src={item.images.length > 0 && item.images[0].imageUri} />
+            <img id="prodIcon" src={item.images.length > 0 ? item.images[0].imageUri : ""} />
           </div>
         </div>
       ))}

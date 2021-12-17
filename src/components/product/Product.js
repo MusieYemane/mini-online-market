@@ -9,7 +9,7 @@ export default function Product(props) {
     <div className="productCard">
       <div id="imgContainer">
       <Link to="/productPage" state= {{product:product}}> 
-      <img className="small" src={product.images.length > 0 && product.images[0].imageUri} alt={product.name} /></Link>
+      <img className="small" src={product.images.length > 0 ? product.images[0].imageUri : ""} alt={product.name} /></Link>
       </div>
       
       <h4>{product.name}</h4>
